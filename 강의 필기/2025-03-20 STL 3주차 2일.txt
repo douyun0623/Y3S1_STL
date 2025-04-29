@@ -1,0 +1,134 @@
+2025-03-20 stl 3주 2일
+
+바이너리를 바이너리로 읽지 않으면 안된다.
+
+메모리가 컨티구어스 해야하지 메모리에 저장할 수 있다.
+
+
+
+in.read((char*)a.data(), a.size() * sizeof(int));
+이를 cpp 스타일 캐스팅으로 해보시오
+->> 찾아볼것
+
+
+역참조 오퍼레이터 d refrence opreator  -> *max_element (*를 말하는것)
+cout << "최댓값 - " << *max_element(a.begin(), a.end());
+
+
+
+//-----------------이러면 문제 있음
+ifstream in{ "int 10만개를 바이너리 모드 write함수로 기록", ios::binary };
+
+array<int, 10'0000> a;
+in.read((char*)a.data(), a.size() * sizeof(int));
+
+cout << "최댓값 - " << *max_element(a.begin(), a.end());
+cout << "최솟값 - " << *min_element(a.begin(), a.end());
+
+
+max_element알고리즘은 O(N)알고리즘이다. 
+만약 for루프로 했더라면 10만번만 한번 돌고 다 찾을 수도 있을텐데
+100점에서 30점 정도 받을 수 있다.
+
+
+auto p = minmax_element(a.begin(), a.end());
+minmax_element()로 한번에 찾을 수 있다. 
+pair를 리턴하는 함수이다. 
+한번만 순환하면서 값을 찾을 수 있다. 
+
+auto p = minmax_element(a.begin(), a.end());
+cout << "최솟값 - " << *p.first << endl;
+cout << "최댓값 - " << *p.second << endl;
+
+
+
+조금더 발전시킨다면?
+auto [최솟값의위치, 최댓값의위치] =  minmax_element(a.begin(), a.end());		[] : 브라켓
+cout << "최솟값 - " << *최솟값의위치 << endl;
+cout << "최댓값 - " << *최댓값의위치 << endl;		// 적절한 영어로 바꿔서 쓸것
+// structured-binding 앞으로 자주 쓸 것이다. 
+2개이상을 받을 경우 내가 엮은 이름으로 바인딩 할 수 있을 것이다. 
+
+
+constrexpr이란 무엇인가? 찾아보시오
+
+
+메모리 얼라이먼트를 알아서 8로 맞춰줌
+class Dog {
+private:
+	string name;
+	int id;
+public:
+};
+
+
+템플릿에서는 어떤 타입인지 알려줘야함
+uniform_int_distribution uid { 'a', 'z' };로 해서 문제가 생겼음
+
+
+
+println("[{:7}] - {}", id, name);
+두번째 { }빈칸을 하나 있으면 돌아간다. 
+
+
+
+
+
+// 위에 적은 class Dog를 스트림의 write 함수를 사용하여 메모리 그대로 저장하였다.
+이러면 Dog가 10만마리 ㅈ저장되어있는지 알수 없음
+
+파일의 크기를 파일 시스템에서 알 수 있음
+
+
+
+public, private, 
+	접근 지시자 (영어로도 알아두기) accese modifyer?
+
+
+
+
+1kb정도를 stack에 쓰지 않는게 좋을 것
+array<Dog, 10'0000> dogs;이를 메인 밖에 놔두어야 한다.
+
+
+
+in >> dog;
+operator>>(in, dog);	와 같은 문장이다.
+
+
+함수 속에서는 아무일이 있어도 상관 없다. 
+
+friend istream& operator>>(istream& is, Dog& dog) {
+	return is.read((char*)&dog, sizeof(Dog));
+}
+
+
+
+!!!!!!!!!!!!!!!!!!정리!!!!!!!!!!!!!!!!!!!!
+
+
+c++ File I/O
+
+@@@@Mode@@@@@
+1. text (기본 defult)
+2. binary
+
+@@@@i/o level(기계와 얼마나 친한 가)@@@@@@
+hight level	: <<, >>		(이게 좋다는게 아님) 	어떻게 사용자에게 보기 좋게 할까
+low level 	: read, write		(이게 더 좋다잉)
+
+text는 hight level로
+binary는 low level로 가능하다.
+
+반대로도 가능은 하지만 그렇게 해서는 안된다. 미친놈임 
+
+
+
+이거 설명~ 찾아보기
+0x0A  -> 0x0A
+	     0x0D
+
+
+
+
+

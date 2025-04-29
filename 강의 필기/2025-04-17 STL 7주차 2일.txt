@@ -1,0 +1,248 @@
+2025-04-17 STL 7주차 2일
+
+배운 다이나믹 메모리가 vector밖에 없네
+
+istream_iterator<string>{cin} 	
+키보드에서 고급입력을 이용해서 string으로 읽을래?
+그만 읽고 싶을때까지
+
+
+sort(v.begin(), v.end());
+이렇게 하면 왜 정렬되냐?
+sort는 표준 스트링의 정렬방법을 알기 때문에 정렬해줘!
+
+string < string
+사전식 정렬
+
+
+
+
+vector가 마냥 좋으면 새로운게 안나왔겠지
+
+
+
+언어를 공부하면서 내가 다뤄야할게 int야? 아니지
+vector<int> v; 쓰레기 코드 구나
+벡터의 필드는 3개 있는데
+
+
+cpp 표준 널 포인터는 nullptr !!
+NULL이런것은 없다!
+
+
+vector<int> v;
+
+cout << "현재 원소 개수 - " << v.size() << endl;
+cout << "재할당하지 않고 담을 수 있는 최대 원소  개수 -	" << v.capacity() << endl;
+cout << "v가 관리하는 메모리 - " << v.data();
+
+
+오브젝트라고 불릴만한 친구는! v야
+오브젝트가 살수 있는동네는 3개인데 이친구는  지역에 있으니까 -> stack에 살고 있겠네
+필드는 3개가 있다고 주장하는데 -> 진실은 저 넘어에 있다. ( 니가 찾아봐라 )
+
+멤버
+1. 	 	size (디폴트 원소의 0개)
+2. 용량	capacity (0개)
+3. 		data	(디폴트 프리스토어 x)0000000000
+
+이제 v.push_back(1);을 한후 이제 어떻게 될까???
+
+미친놈 아니면 push_back()이게 가장 편하다.
+v.push_back(1); 어떤 동작을 하냐?
+교과서에 가보자		: https://en.cppreference.com/w/cpp/container/vector
+push_back : adds an element to the end
+
+void push_back( const T& value );
+	새 엘리먼트를 초기화 할건데 카피해서 초기화할거야
+void push_back( T&& value );
+	이동시킬꺼야 새로운 원소로
+
+If after the operation the new size() is greater than old capacity() a reallocation takes place, in which case all iterators (including the end() iterator) and all references to the elements are invalidated. Otherwise only the end() iterator is invalidated.
+
+
+Complexity
+Amortized constant. O(1) 동작이야~
+
+
+size 0 -> 1;
+capacity 0 -> ? 				free store에 int 하나 연결할 크기를 요청해요
+						copy construction 해요
+
+
+
+용량이 부족하면 메모리가 이사간다.
+여유분이 있으면 메모리가 유지 된다.
+용량은 50퍼센트씩오른다. (이러면 빵점)
+vs에서는 이라는 것을 붙여야한다.
+표준에는 얼마나 해야하는지 안써있음
+
+
+
+
+이걸 그림그리기는 어려울껄?
+
+	vector<STRING> v;
+
+	v.push_back(STRING{ "12345" });
+
+
+STACK에 v가 있고 필드 3칸
+디폴트 생성
+v	0			-> 	이름 없는 객체 생성 	? 	5	포인팅	free store
+	0				STRING{ "12345" }			--->		5
+	nullptr								1			1 2 3 4 5
+	8바이트 3개										
+
+
+그 다음에 push_back 한다.
+이제1로 바꿔야하 한다. 프리스토어에 string 하나 담을 메모리를 요청하낟.
+v가 이제 준비한 메모리에 연결하고 copy해서 string에서 copy ctor를 이용해서 메모리를 
+포인팅 시키고 깊은 복사해서 가져오는 동작을 해야한다.
+동작이 끝나면 내가 관리하는 v의 객체는 1로 바꿔야한다. 임시 객체는 지역이 끝나자마자
+소멸!!! 된다.
+
+
+이름이 없는 객체 인데? 이걸 누가 다시 사용할 가능성 있냐? 전혀 없는데?
+x-value로 취급해도 아무 문제 없겠는데?
+copy 를 안하고 move ctor한다.
+
+메모리 만드는 것은 똑같은데 v에서 잡은메모리가 string에서 잡은 메모리에 연결을 한다.
+
+v.push_back(STRING{ "12345" });
+v.push_back(move(STRING{ "12345" }));이렇게 가능하다고 컴파일러가 생각한다.
+
+v.push_back(static_cast<STRING&&>(STRING{ "12345" }));
+이렇게 바꾼다.!!
+
+
+
+STRING a {"12345"};
+v.push_back(a);
+이러면 복사생성을 하겠지!!!?
+
+
+	
+STRING을 만들면서 잡은 자원 메모리를 
+
+
+
+벡터가 몇개를 공간을 쓸지 예상을 해보고 
+예를 들어 용량을 100이렇게 설정하는 거야
+그러면 o(1) 상수 시간으로 처리할 수 있겠지
+예약하는 방법 v.reserve(100); 100개까지는 미리 용량을 잡아줘!
+dynamic -> run time에 숫자가 고정되는 경우! (10000개이상의 정보를 담지 않는 벡터야)
+
+이럴때 inplcae_vector 실행시에 재할당이 일어나지 않는 벡터!
+
+
+v.push_back()은 구시대래?
+v.emplace_back()이게 훨씬 좋아?
+push_back()과 다른게 하나도 없으~
+
+
+
+
+
+
+vector<STRING> v;
+
+v.push_back(STRING{ "12345" });
+
+
+
+stack 
+stack에는 base ptr가 있어 
+
+베이스 객체로 부터 얼마나 떨어진 위치에 고정된 곳에 넣어라!
+v는 컴파일할때 위치가 고정되는 객체야 -> 이름으로 찾을 수 있다.
+
+new로 잡은 객체는 이름으로 잡을 수 없어요
+고정되지 않으니까! 그래서 포인터로 잡는거에요!!!!
+
+
+프리스토어에서 할당된 객체는 이름 없는 개체임 근데 MM이렇게 대조한다.
+os에서 linkedlist로 관리한다. 
+
+vector -> 최대
+deque -> 최대
+v.max 찍으면 ? 덱이 훨씬더 많이 담을수 있어! 라는게 정상이에요
+
+메모리 메니저가 요청하는 메모리는 continguous해야함
+deque은 가까 컨티구어스 메모리 이다. 링크드 리스트로 관라한다
+메모리가 나는 덱을 vector와 list의 중간 단계인 장점을 어떻게 모아보려는 친구야
+벡터보다 원소를 더 많이 잡을 수 있어 
+access 속도는 d[i] access 가능해 근데 가짜임 vector보다는 속도가 느릴 수밖에 없다.
+
+___________________________________________
+
+v라고ㅗ 이름 붙일 수 있는 것은 메모리가 고정되어있기 때문이야!
+벡터가 원소를 추가하려고 해!
+
+이름 없는 string을 만들어 stack에 만들어져 글자수 5글자 1 2 3 4 5
+이동해서 관리하면 될텐데 관리 공간이 없구만?
+시스템에 공간을 요청하자! (벡터가) 
+
+!!!!!이런 동작은 게임에서 사용하면 안된다.!!!!!
+시스템에 공간을 요청하는 v.push_back()-> new memory()이러면 시스템의 처분만 기다리게 된다.
+이러면 안된다. 메모리를 여유있게 잡거나? new 오버로딩하거나? memory pool;
+inplace_vector 이렇게 써야한다.
+
+vector가 만든 메모리가 있고
+이동생성자가 메모리를 만드는 것이 아니라 ( 메모리를 색칠하는거에요!)
+만든 그대로 이동한 데이터는 사라짐 그리고 다시 자원 메모리와 연결된다. 
+
+메모리 공간을 요청한게 생성자가 아니잖아?
+
+
+컴파일러가 처다보는거야
+예ㅡㄴㄴ 이름없는 객체 r-value 
+implace_back()을 이용한다면( emplacing 직접 심어버린다.)
+이 객체 만드는 것은 내 소관이 아닌데
+생성자는 메모리에 내용을 채우는 것인데
+이러면 객체 안만들어도 될거 같은데?
+생성자는 객체를 생성하지 않아요! 객체를 채우는 거에요!
+소멸자는 소멸시키는게 아니고 (??)
+
+그러면 벡터에게 시킨다. 
+너가 메모리를 관리하지? v.data()이렇게 가져올 수 있지?
+이러면 ++v.data()다음 관리하는걸로 넘어가지?
+그니까 v는 어디에 색칠할지 알고 있는거야
+v-> string의 생성자를 직접호출하는거야!!!!!!!!!!
+
+
+이세상의 모든 생성자는 this 포인터가 전달된다.
+이 위치를 정확히 아는데 이 위치를 색칠 해줘 라고 알려줘야겠지???
+
+
+이렇게 재료만 넘기는거야!!
+v.emplace_back("12345");
+어 이러면 임시객체를 안만드네????!?!?!?
+
+emplacing은 이를 리스트로 전달해도 되겠네??
+https://en.cppreference.com/w/cpp/container/vector/emplace_back
+그 위치 그대로
+벡터가 this포인터를 얼마든지 보내줄수 있겠지
+그 위치에 생성해줘!
+
+
+Appends a new element to the end of the container. The element is constructed through std::allocator_traits::construct, which typically uses placement-new to construct the element in-place at the location provided by the container. The arguments args... are forwarded to the constructor as std::forward<Args>(args)....
+
+벡터는 클래스의 생성자를 알아서 직접 그 자리에 때려박을거에요
+인자가 그대로 전달된다.
+
+
+r-value를 쓰는 이유 
+이동과, 완벽 전달(perfect forwarding)
+
+
+
+
+
+
+
+emplace_back 할때는 객체가 만들어지는 형태로 쓰는게 절대 아니야!!!!!
+
+
+
+

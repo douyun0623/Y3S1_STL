@@ -1,0 +1,367 @@
+STL 중간고사 총정리
+
+1주 1일
+
+컴파일 하는것 -> 기계어로 바꾸는 것(실행파일 만드는 것 아님)!
+
+c++ 사용 x 			대체				더 좋을 수 있는것
+1 : T[ ]; 		-> array<T,N>		=
+2.; char*;		-> string			->	string_view
+3 : T*;			-> unique_ptr<T>
+			    shared_ptr<T>
+
+
+std::string_view : const std::string&를 대신할 수 있다( 나는 스트링을 쳐다보기만한다.)
+			string_view 타입 데이터를 .data()로 const char*로 접근 할 수 있다!
+
+
+인이셜라이져 { } -> 생성과 동시에 어떤 객체를 초기화 한다.
+
+
+RAII : Resource Acquisition Is Initialization" 한국어로는 "자원 획득은 초기화다"
+	RAII는 객체가 생성될 때 자원을 획득하고, 
+	소멸될 때 자원을 자동으로 반납하는 C++의 디자인 패턴이에요.
+	즉, 자원(리소스)을 객체의 생명 주기에 맡기는 것.
+
+	예시)	std::ofstream 객체는 함수가 끝나면 자동으로 닫는다.
+		std::unique_ptr, std::shared_ptr
+
+1. 고급 i/o 구분
+	in >> c;
+2. 실제로 아래와 같이 해석됨
+	in.operator>>(c);        // 멤버 함수 방식
+	// 또는
+	operator>>(in, c);       // 전역 함수 방식 ( 대부분 전역함수로 구현되어 있음)
+	
+
+파일 끝에서 EOF라는 int값이 있음 -1
+
+
+
+// 대입 연산자 오버로딩 호출
+Dog a, b;
+a = b;
+이 코드는 실제로는 다음과 같은 의미입니다:
+a.operator=(b);  
+즉, = 연산자가 **자동으로 특별한 멤버 함수인 operator=**를 호출하는 순간이에요.
+따라서 우리가 직접 정의해서 원하는대로 동작을 바꿀 수 있음
+
+
+in >> std::noskipws:		// 화이트 스페이스를 스킵하지 마라!
+
+
+파일을 아무설정을 안하고 열면 text 모드로 열린다.
+std::ios::app 	: 파일을 추가 모드로 연다. (기존의 파일이 있으면 지우지 않고 항상 파일 끝에 덧붙임
+
+
+std::copy :  범위 기반 복사 함수
+std::copy(시작_반복자, 끝_반복자, 대상_반복자);	
+		복사 대상 공간이 충분히 확보되어있어야 한다.
+		만약 복사 대상이 vector이고 공간확보가 안된경우 : std::back_inserter	사용
+		즉, 대상 컨테이너에 공간이 없어도 자동으로 push_back() 해주는 반복자!
+		ex)   std::copy(src.begin(), src.end(), std::back_inserter(dest));
+
+	
+std::istreambuf_iterator : 입력 스트림에서 문자(char)를 한 글자씩 읽는 반복자
+		std::cin, std::ifstream, std::istringstream 같은 
+		스트림 객체의 버퍼에 직접 연결돼서 char 단위로 데이터를 읽어요.
+		기본 생성자는 EOF를 의미한다.
+		사용처! : 파일 전체 복사, 문자를 하나씩 처리하는 경우
+		<char> 생략 해도 char 타입을 유추해서 추론 가능
+		다른 자료형도 사용가능하지만 
+		예를 들어 int를 쓴다면 4바이트 씩읽기 때문에 파일 내용이 4바이트 단위로 나눠야한다.
+
+std::ostreambuf_iterator :  출력 버퍼에 데이터를 한 번에 한 문자씩 쓰는 반복자입니다.
+
+std::istream_iterator vs std::istreambuf_iterator 이 둘의 차이점
+
+항목			istream_iterator<T>							istreambuf_iterator<char>
+동작 단위		값 단위 (T)									문자 단위 (char)
+사용 방식		>> 연산자를 통해 값을 읽음 						(공백 기준)	버퍼에서 문자 하나씩 읽음
+버퍼 접근		아님 (형식화 입력)							버퍼 직접 접근 (비형식화 입력)
+성능			상대적으로 느림 (파싱 있음)						빠름 (바이트 스트림 그대로)
+쓰임새		int, double, 사용자 정의 타입 등 일반적인 입력			파일 복사, 이진 파일 처리, raw text 읽기
+	
+istream_iterator<string>	["hello", "world", "this", "is", "chatGPT"]
+istreambuf_iterator<char>	"hello world\nthis is chatGPT"
+
+
+아래 방식을 사용해서 중간 저장을 하지 않고 파일에 저장 할 수 있다. (스트림-> 스트림으로 직접 복사)
+std::vector<char> v(size);
+std::copy(std::istreambuf_iterator{ in }, {}, v.begin());
+std::copy(v.begin(), v.end(), std::ostreambuf_iterator{ out });
+
+std::copy(std::istreambuf_iterator{ in }, {}, std::ostreambuf_iterator{ out });
+
+
+2주 1일
+
+템플릿은 선언과 정의를 나누지 않고 동시에 한다.
+
+
+change(a, b);
+// 1. change(Dog, Dog);	있니?					
+		값 (call by value)로 전할 하는 함수가 정의되어 있는지 확인하는말
+// 2. change(Dog&, Dog&); 동시에 존재시 (모호하다.)
+		값 전달 버전과 참조 전달 버전이 동시에 존재할 경우 컴파일러가 어떤 것을 선택해야 할지 모호
+		하지만 c++ 컴파일러는 인자에 따라 더 적절한 함수를 선택한다.
+// 3. 컴파일러가 template을 이용하여 코드 생성
+		명시적으로 선언한 change(Dog, Dog) 함수가 있다면, 
+		컴파일러는 명시적으로 선언된 함수를 우선시합니다. 즉, 템플릿 함수보다 일반 함수가 우선됩니다.
+
+
+
+template <class T>
+void change(T& a, T& b)
+{
+	T temp{ a };
+	a = b;
+	b = temp;
+}
+이러면 컴파일 타임에 T를 dog라고 추론하고
+타입에 맞는 코드를 자동 생성한다. ( 이 과정을 템플릿 인스턴스화 라고 한다.)
+
+
+
+랜덤 엔진의 차이
+std::default_random_engine dre;	기본 생성자 사용, 즉 고정된 시드값으로 초기화됨 (보통 1 또는 구현 정의) 매번 같은 난수열이 생성됨
+						이러면 같은 결과를 보장한다.
+std::default_random_engine dre{ std::random_device{}() };	무작위 시드값으로 초기화	매번 다른 난수열이 생성됨
+						random_device{}	 : 임시 객체 하나 생성
+						()	 : operator() 호출 만든 객체한테 함수와 같이 호출해 난수를 하나 뽑는것
+
+
+2주 2일
+numeric_limits<int>::min()
+
+std::cout << "int 최소값 (min): " << std::numeric_limits<int>::min() << "\n";
+std::cout << "int 최대값 (max): " << std::numeric_limits<int>::max() << "\n";
+
+
+std::cout << "float 최소값 (min): " << std::numeric_limits<float>::min() << "\n";
+std::cout << "float 가장 낮은 값 (lowest): " << std::numeric_limits<float>::lowest() << "\n";
+
+
+
+정수형:
+	 min()과 lowest() 동일 (가장 작은 음수)
+
+부동소수점(float, double):
+	min() → 0에 가장 가까운 양수
+	lowest() → 표현 가능한 가장 큰 음수
+
+
+
+std::min_element(...)	가장 작은 원소의 iterator
+std::max_element(...)	가장 큰 원소의 iterator
+std::minmax_element(...)	둘 다 한 번에 찾음 (쌍 반환)	pair로 반환한다.
+*max_element(...)	값 자체를 얻을 때 사용 (반복자를 역참조)
+
+
+std::cout << "가장 큰 값: " << *it << '\n';
+std::cout << "해당 인덱스: " << std::distance(arr.begin(), it) << '\n';
+
+
+
+cout << "최댓값 - " << *max_element(istream_iterator<int>{in}, {}) << endl;
+iterator를 사용해 이와 같이 쓸 수 있음
+
+
+
+array는 컴파일시 크기가 유일한 stl
+
+
+istream_iterator
+이터레이터 어뎁터 스트림이 녀석의 정체
+
+
+
+
+
+3주 1일
+
+
+int 최솟값 0부터 최대까지 필요한 바이트 수의 평균이 무엇인지 시험문제 어딘가에서 낸다...
+
+
+iota(a.begin(), a.end(), 1);	이와 같이 쓸 수 있다.(더하는 작업)
+	<numeric> 헤더에 있는 함수
+	std::iota(시작_반복자, 끝_반복자, 시작값);
+	기본적으로 1씩 증가
+	
+
+
+시간의 연속성 : continuous;
+공간의 연속성 : contiguous;	-> stl의 핵심 단어(이런거 모르면 안된다.)
+
+
+write와 read는 파일 입출력 또는 입출력 스트림
+	바이너리 파일 처리
+	포인터를 char*로 캐스팅 해야함( 바이너리는 바이트 단위로 다루기 때문이다.
+	(char*)a.data()이렇게 하는게 정석	-> low 레벨이니까 이렇게 해도 되겠지
+
+static_cast~~
+포인터 캐스팅은 어떻게 해야하나?
+
+
+sizeof(int) * a.size() 이를 바꿔 
+sizeof(int) 이를 추상화 할 수 있다.
+
+
+
+(대표 운영체제 : windows, 유닉스, 리눅스, ios : text모드로 장난 칠떄 방법이 다름) 
+
+white spac 0x20 (스페이스를 쓸때 만들어지는, \t, enter)
+	word process -> 공백
+
+
+
+std::fill 함수란?
+	👉 C++ STL 함수 중 하나로, 컨테이너의 구간을 특정 값으로 채워주는 함수입니다!
+	std::fill(시작, 끝, 값)
+
+
+
+views::take
+	views::take(n)은 앞에서부터 n개 요소만 가져오는 view예요.
+	#include <ranges>   // ✅ views는 여기!
+
+
+
+std::views::filter(...)
+	컨테이너 요소 중에서 조건을 만족하는 것만 추려내는 역할이에요.
+
+
+
+4주차
+
+int* p = new int[num];			// free-store 
+메모리를 못주는 상황이 생김!!		->bad allocation
+자원이 없어질경우를 대비 자원을 다시 쓰기
+	"메모리를 못주는 상황"이란?
+		num이 너무 커서 메모리가 부족하거나
+		시스템이 메모리 할당을 거부하거나
+		OS 자체가 무리한 요청이라고 판단했을 때
+
+
+
+헤더 numeric
+auto sum = accumulate(p, p + num, 0); 이 알고리즘은 제너릭 알고리즘이다. 
+						  0으로 하면 int 값으로
+						  0LL longlong
+
+
+다른 함수로는 병렬처리를 할 수 있다. (찾아보시오)
+병렬 처리 가능한 누적합?
+std::reduce
+	auto sum = std::reduce(std::execution::par, p, p + num, 0);
+	std::execution::par : Parallel	병렬로 실행 (멀티 스레드 사용)
+	std::execution::par_unseq	Parallel + Vectorized	병렬 + SIMD 벡터화 (가장 빠르지만 순서 보장 X)
+
+
+🔥 차이점
+
+함수			특징					병렬 가능 여부
+std::accumulate	순차적 누적 (순서 중요)	❌
+std::reduce		병렬 가능 (순서 없음)		✅ ✔️
+
+
+
+동적할당은 컴파일 타임에 결정된다.
+
+
+
+RAII (Resource Acquisition Is Initialization) 개념을 강조
+문제 1: 예외가 터졌을 때 자원 해제가 안 됨
+	throw 이후에 delete[] p;가 호출되지 않음 → 메모리 누수
+	내가 호출한 함수가 예외를 던질지 안 던질지 모른다
+	예외는 언제 어디서든 발생 가능하기 때문에 불안정한 자원 해제 코드가 많아짐
+
+
+문제 2: 자원을 해제한 뒤 또 해제하는 경우 (Double delete)
+	이미 해제한 포인터를 다시 해제 → 정상적으로 보이지만 내부적으로 위험
+	디버깅도 힘듦 (죽은 시점 모름)
+
+
+
+예외가 터지든 말든 v는 스코프 벗어날 때 자동 소멸
+이게 바로 RAII의 힘
+unique_ptr로 new/delete 대체 : 예외가 발생해도 알아서 delete!
+
+
+이니셜라이제이션은 리소스를 에퀴시전하는것과 같다.
+“new로 자원을 얻는 것만 중요한 게 아니라,
+그 자원을 어떻게 안전하게 해제할지를 생각해야 한다.
+→ 그걸 자동으로 처리하는 RAII가 중요하다!”
+
+
+
+
+이게 말하는 핵심: 예외가 터져도, 지역 객체는 반드시 파괴된다
+C++은 Stack Unwinding (스택 언와인딩) 을 보장하기 때문입니다!
+
+Stack Unwinding 이란?
+	예외가 발생하면, 현재 함수에서 벗어나면서
+	스택에 있는 지역 객체들을 "거꾸로" 소멸시켜 나가는 과정
+
+이게 왜 중요하냐면?
+지역 객체가 자원을 들고 있을 때 (예: 파일, 메모리, 락 등)
+예외가 터져도 자원은 안전하게 자동 정리
+RAII 패턴 + Stack Unwinding = C++의 자원 관리 철학
+
+
+RAII가 도대체 뭐야
+class로 자원을 관리하는거야
+class 생성될때 자원을 연결하는 거야
+확정제거, 소멸을 할 수 있다.
+자원, 리소스의 생명주기, 그 컨트롤러의 생명주기와 일치시킨다
+
+
+
+
+STL의 <algorithm>에 있는 제네릭 알고리즘입니다:
+
+"제네릭"이란?
+	InputIt: 어떤 종류의 반복자든 OK (vector, list, istream, etc.)
+	OutputIt: 어떤 출력이든 OK (vector, ostream, etc.)
+	UnaryOperation: 어떤 동작이든 OK (lambda, 함수, 함수 객체, etc.)
+
+transform(
+    istreambuf_iterator<char>{in},  // 입력 시작
+    {},                             // 입력 끝
+    ostreambuf_iterator<char>{out}, // 출력
+    [](char c) { return toupper(c); }  // 변환 함수
+);
+
+
+
+
+
+
+
+
+4주 2일
+
+sort에서 
+// 바꿔야 하면 1
+// 이미 정렬상태이면 -1
+// 둘이 정렬기준상 동일한 값이면 0
+
+
+int* p = (int*)a;	// c언어 스타일의 케스팅
+int* q = (int*)b;
+이렇게 쓰지 않는다.
+
+
+기본 타입 변환 (예: int → float)	static_cast
+포인터끼리의 변환 (void* → int*)	reinterpret_cast
+
+
+sort(a.begin(), a.end(), 오름차순);		// 디폴트 정렬 operator <
+
+
+
+Callable type - 호출가능한 타입
+// 1. 함수
+
+

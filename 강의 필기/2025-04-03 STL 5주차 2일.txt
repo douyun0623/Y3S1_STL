@@ -1,0 +1,103 @@
+
+이렇게 읽는것이 정상적인 코드
+for (int i = 0; i < 10'0000; ++i)
+	in >> dogs[i];
+
+
+전역 함수를 오버로딩하는건가?
+friend istream& operator>>(istream& in, Dog& dog) {
+	return in >> dog.id >> dog.name;
+}
+
+
+클래스를 코딩하고 geter를 쓰는 것은 비추해요!
+이러면 내 데이터의 접근성을 높여주는거야
+
+인터페이스 함수를 만드는것이 더 낫다.
+
+
+정렬할때는 2가지 방법으로 쓸수 있다.
+sort();
+ranges::sort()'
+
+
+string 은 
+.size()
+.lengh()
+두가지 방법으로 길이를 알려줄수 있다.
+
+
+퀄리파이어?
+검색 ㄱㄱ
+
+
+ranges 버전의 알고리즘음 써서 
+#incldue <ranges>
+for (const Dog& dog : dogs | views::take(1000))
+	dog.show();
+
+
+이미 오름차순으로 찍혀있어 내림차순으로 찍기 쉽다.
+for (const Dog& dog : dogs | views::reverse)
+	dog.show();
+
+
+sort(dogs.begin(), dogs.end(), [](const Dog dog1, const Dog dog2) {
+	return dog1.getNameLen() < dog2.getNameLen();
+});
+dogs.begin(), dogs.end(), -> 정렬대상의 범위야! 
+
+
+bool operator<(const Dog& other) const {
+	return name.size() < other.name.size();
+}
+이를 이용해서 sort(dogs.begin(), dogs.end()); 이렇게 해도 쓸수 있음
+
+
+소트의 기본 동작은 non-decendingorder로 정렬한다.
+기본은 오름차순으로 정렬한다.
+
+
+읽어와서 메모리에 저장하고 ~~이런게 첫번째 문제가 나올것이다. 
+
+
+
+둘중 어떤 소트가 속도가 더 빠를까?
+이런것도 시험에 나올수도 있겠네
+
+
+
+vector가 어떻게 동작하는지 자세하게 알아볼것이다. 
+최신에서는 vector가 진화 발전하고 있다.
+(inplace_vector)
+
+flat_set
+flat_map
+이들도 벡터? (검색 ㄱㄱ)
+
+
+접근지시자 -> 영어로 accsess modifyer (꼭 알아두도록)
+
+
+[] -> *로 collapsing된다.
+
+
+lvalue    local 사인
+p.reset() = make_unique<char[]>(len); 이게 메모리 장소가 아니라는거야
+
+
+
+memcpy(p.get(), s, len);		// DMA
+메모리끼리 전달 이거보다 빠른것은 없다.
+
+프렌트는 접근지시자의 영향을 받지 않는다.]
+
+
+
+string 클래스는 컴파일러마다 다른게 만들수 있지요
+vs에는 string의 크기는 32이고 debug 모드로 하면 더 느려짐
+니 맘대로 코딩할 수 있다는거야
+
+
+
+

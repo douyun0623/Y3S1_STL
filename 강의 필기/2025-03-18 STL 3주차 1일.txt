@@ -1,0 +1,156 @@
+2025-03-18 stl 3주 1일
+
+array <int, 1000> a{ istream_iterator<int>{in}, {} };
+이런 표현이 되나?
+
+int 1000개를 쓰고 있는데 8200바이트를 쓰고 있음
+int 하나에 4바이트인데... 이것으로 binary mode에 대해서 알 수 있지 않을까
+
+
+// 필기
+int num {0x01'02'03'04};	
+
+
+ 2진수 -  00000001'00000010'00000011'00000100	-> littleendian (4바이트를 눈으로 볼 수 있음)
+10진수 - 16909060	-> 16909060	0x20(스페이스)	9 byte (비효율적..)
+16진수 - 1020304
+
+
+int 최솟값 0부터 최대까지 필요한 바이트 수의 평균이 무엇인지 시험문제 어딘가에서 낸다...
+
+
+
+int num { ? };
+	->  low -> righ
+	     | 4 | 3 | 2 | 1 |
+	메모리를 그대로 기록
+	
+	     | 4 | 3 | 2 | 1 |		-> 가장 효율적
+
+
+
+array <int, 1000> a; 	-> 이 데이터는 초기화 되어 있지 않음
+
+
+for루프를 쓰지 않고
+
+array <int, 1000> a;
+
+#include <numeric>
+iota(a.begin(), a.end(), 1);	이와 같이 쓸 수 있다.(더하는 작업)
+
+
+
+// 필기
+array <int, 1000> a;		-> 무슨일이 일어나냐
+	stack에 메모리가 확보 된다.
+	__________________________________________
+	|1|2|3|						|	> 메모리의 전체크기는 4'000바이트이다.
+	-------------------------------------------------
+
+	이 자료구조의 특징은 연속적으로 나타나는것
+	시간의 연속성 : continuous;
+	공간의 연속성 : contiguous;	-> stl의 핵심 단어(이런거 모르면 안된다.)
+	
+	시작, 4000, 어디에? -> 이런 방식은 속도상 저하되지 않음
+	
+	
+
+out.write 메모리 그대로 기록
+a.data() a의 데이터를 어디에 보관했어? 
+(char*)a.data()이렇게 하는게 정석	-> low 레벨이니까 이렇게 해도 되겠지
+
+static_cast~~
+포인터 캐스팅은 어떻게 해야하나?
+
+
+sizeof(int) * a.size() 이를 바꿔 
+sizeof(int) 이를 추상화 할 수 있다.
+	a가 가지고 있는 자료형를 찾아서 고칠 필요없게 만들 수 있다.
+
+
+왜 4004 바이트의 사이즈가 나올까?
+어디선가 누가 장난 쳤다.	
+out.write((char*)a.data(), sizeof(int) * a.size()); 이는 정직하다.
+
+파일에 기록할때 장난질이 일어났다. 
+파일을 연 상태가 문제가 있다. 
+ofstream out{ "int 1000개 메모리 그대로" }	; 
+ofstream out{ "int 1000개 메모리 그대로", ios::binary }; 이와 같이 열면 된다.(정확히 4000바이트) 
+전에는 text 모드로 열려 있었음
+
+text모드는 인간이 볼거야를 전재로 한다.
+이를 누가 하냐 os(운영체제)가 해준다. 
+(대표 운영체제 : windows, 유닉스, 리눅스, ios : text모드로 장난 칠떄 방법이 다름) 
+
+white spac 0x20 (스페이스를 쓸때 만들어지는, \t, enter)
+	word process -> 공백
+
+
+---------------------------------------------------------
+array <int, 1000> a;
+a.fill(0x0a0a0a0a);
+
+// [문제] a의 data를 파일 "int 1000개 메모리 그대로"에 기록하자
+ofstream out{ "int 1000개 메모리 그대로"};
+out.write((char*)a.data(), sizeof(int) * a.size());
+
+메모리에 
+________________________________
+|A|A|A|A||A|A|A|A||A|A|A|A||A|A|A|A|
+
+텍스트 파일로 window에서
+	0A 	-> 0A	(한줄 내리기)		line feed
+	 	    0D		(캐리지를 내리기)		arrage return 
+		이래서 2바이트로 확장을 하는거임
+
+
+
+-> 파일을 binary 모드로 열어야 변환이 일어나지 않는다.!!!!!!!!!
+
+
+default_random_engine dre; 이거만 해도 5천바이트임 main안에 넣지 말자
+
+// 이거는 안에 넣어도 됨
+uniform_int_distribution uid{ numeric_limits<int>::min(), numeric_limits<int>::max() };
+
+
+
+	for (int i = 0; i < 10'0000; ++i) {
+		int num = uid(dre);
+		out.write((char*)&num, sizeof(int));
+	}
+이런건 자동으로 int num을 for루프 밖으로 뺌
+근데 내가 알아서 밖으로 빼는게 좋음
+
+
+
+if (not in)
+	return 20250318; 			return 을 넣지 않는게 표준
+
+
+array 다음에 inplace_vector 이 나올것임 cpp26에
+
+
+
+min_element 어디있는지 찾으려면 reference
+
+
+바이너리 모드를 빼니까 값이 다르게 나타난다.
+
+
+// 바보스러운 코딩...
+for (int& num : a)
+	in.read((char*)&num, sizeof(int));
+
+
+--> 루프를 돌 필요가 없음
+in.read((char*)a.data(), sizeof(int) * a.size());
+
+
+클래스 위에 마우스를 올리면 볼수 있음
+메모리 레이아웃을 누르면 메모리 상태를 볼수 있음
+
+
+sort(a.begin(), a.end())	->> 낡은 코드(cpp20이후 모두 다시 코딩했음)
+

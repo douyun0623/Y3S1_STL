@@ -1,0 +1,142 @@
+#include <iostream>
+#include <string>	
+#include <fstream>
+
+//--------
+int main()
+//--------
+{
+	std::ifstream in{ "main.cpp" , std::ios::binary };
+
+	if (not in) {
+		std::cerr << "파일을 열 수 없습니다!" << std::endl;
+		return 1;
+	}
+
+	//std::string str((std::istreambuf_iterator<char>{ in }), {});
+
+	// 쓰기 모드로 저장할 파일을 연다.
+	std::ofstream out{ "파일 저장 연습.txt", std::ios::binary | std::ios::app };
+
+	std::copy(std::istreambuf_iterator{ in }, {}, std::ostreambuf_iterator{ out });
+
+}#include <iostream>
+#include <string>	
+#include <fstream>
+
+//--------
+int main()
+//--------
+{
+	std::ifstream in{ "main.cpp" , std::ios::binary };
+
+	if (not in) {
+		std::cerr << "파일을 열 수 없습니다!" << std::endl;
+		return 1;
+	}
+
+	//std::string str((std::istreambuf_iterator<char>{ in }), {});
+
+	// 쓰기 모드로 저장할 파일을 연다.
+	std::ofstream out{ "파일 저장 연습.txt", std::ios::binary | std::ios::app };
+
+	std::copy(std::istreambuf_iterator{ in }, {}, std::ostreambuf_iterator{ out });
+
+}#include <iostream>
+#include <string>	
+#include <fstream>
+
+//--------
+int main()
+//--------
+{
+	std::ifstream in{ "main.cpp" , std::ios::binary };
+
+	if (not in) {
+		std::cerr << "파일을 열 수 없습니다!" << std::endl;
+		return 1;
+	}
+
+	//std::string str((std::istreambuf_iterator<char>{ in }), {});
+
+	// 쓰기 모드로 저장할 파일을 연다.
+	std::ofstream out{ "파일 저장 연습.txt", std::ios::binary | std::ios::app };
+
+	std::copy(std::istreambuf_iterator{ in }, {}, std::ostreambuf_iterator{ out });
+
+
+	std::string str(std::istreambuf_iterator{ in }, {});
+}#include <iostream>
+#include <string>	
+#include <fstream>
+
+//--------
+int main()
+//--------
+{
+	std::ifstream in{ "main.cpp" , std::ios::binary };
+
+	if (not in) {
+		std::cerr << "파일을 열 수 없습니다!" << std::endl;
+		return 1;
+	}
+
+	//std::string str((std::istreambuf_iterator<char>{ in }), {});
+
+	// 쓰기 모드로 저장할 파일을 연다.
+	std::ofstream out{ "파일 저장 연습.txt", std::ios::binary | std::ios::app };
+
+	std::copy(std::istreambuf_iterator{ in }, {}, std::ostreambuf_iterator{ out });
+
+
+	std::string str(std::istreambuf_iterator{ in }, {});
+	std::cout << str << std::endl;
+}#include <iostream>
+#include <string>	
+#include <fstream>
+
+//--------
+int main()
+//--------
+{
+	std::ifstream in{ "main.cpp" , std::ios::binary };
+
+	if (not in) {
+		std::cerr << "파일을 열 수 없습니다!" << std::endl;
+		return 1;
+	}
+
+	// 쓰기 모드로 저장할 파일을 연다.
+	std::ofstream out{ "파일 저장 연습.txt", std::ios::binary | std::ios::app };
+
+	std::copy(std::istreambuf_iterator{ in }, {}, std::ostreambuf_iterator{ out });
+
+	std::string str(std::istreambuf_iterator{ in }, {});
+	std::cout << str << std::endl;
+	std::cout << "임성민 바보" << std::endl;
+}#include <iostream>
+#include <string>	
+#include <fstream>
+
+//--------
+int main()
+//--------
+{
+	std::ifstream in{ "main.cpp" , std::ios::binary };
+
+	if (not in) {
+		std::cerr << "파일을 열 수 없습니다!" << std::endl;
+		return 1;
+	}
+
+	std::string str(std::istreambuf_iterator{ in }, {});
+	std::cout << str << std::endl;
+
+	in.clear();
+	in.seekg(0, std::ios::beg);
+	// 이러면 저장된다.
+
+	std::ofstream out{ "파일 저장 연습.txt", std::ios::binary | std::ios::app };
+
+	std::copy(std::istreambuf_iterator{ in }, {}, std::ostreambuf_iterator{ out });
+}

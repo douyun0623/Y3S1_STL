@@ -1,0 +1,129 @@
+2025-03-13 STL 2주차 2일
+
+랜덤 : 과거에 축적된 결과들과 무관하다
+	이벤트간의 코릴레이션이 전혀 없다.
+	과거에 기반해서 미래를 예측할 수 없다.
+
+
+Pseudo (가짜) random	: 예상할 수 있나? 그렇진 않다. (컴퓨터는 Pseudo Random)
+
+
+진짜 랜덤한 것은 무엇인가? : 토요일에 추첨하는 로또 번호같은 것
+					벼락이 떨어지는 위치
+
+
+default_random_engine dre{ random_device{}() }; 
+이와 같이 다르게 만들수 있음 사람들과
+이 다항식의 시드를 맞추는것 불가능(다양한 값을 사용해서 씀)
+
+int maxValue{numeric_limits<int>::min()}; --> 이렇게 가장 작은 값을 저장가능
+
+
+/// 시험 문제
+
+default_random_engine dre;
+std::uniform_int_distribution uid{ 0, 999'9999 };
+
+// [문제] 랜덤 int 1000개를 메모리에 저장하라
+// 저장된 값 중에서 가장 큰 값을 찾아 화면에 출력하라
+
+//--------
+int main()
+//--------
+{
+	// T[N]
+	int arr[1'000];
+
+	for (int i = 0; i < 1000; ++i)
+		arr[i] = uid(dre);
+
+	int maxValue{numeric_limits<int>::min()};
+
+	for (int i = 0; i < 1000; ++i) {
+		if (maxValue < arr[i])
+			maxValue = arr[i];
+	}
+
+	cout << "최댓값 - " << maxValue << endl;
+
+
+----------> 이러면 0점.. 
+
+// T[N] --> array<T,N> 이렇게 바꿔야함
+
+
+for (int i = 0; i < 1000; ++i)		// magic number, hard-wired
+	arr[i] = uid(dre);
+
+
+1차 바꿀수 있음(0점임)
+for (int i = 0; i < arr.size(); ++i)		// magic number, hard-wired
+	arr[i] = uid(dre);
+
+
+2차 이래야 점수줌
+for (int& num : arr)
+	num = uid(dre);
+
+
+0점	
+int maxValue{numeric_limits<int>::min()};
+
+for (int i = 0; i < 1000; ++i) {
+	if (maxValue < arr[i])
+		maxValue = arr[i];
+}
+
+이런짓을 너가 해야겠니?
+
+auto 위치 = max_element(arr.begin(), arr.end());		// 위치를 리턴한다.
+
+cout << "최댓값 - " << *max_element(arr.begin(), arr.end()) << endl;
+이와 같이 바꿔야함!
+
+
+
+!!!!이미가 있는 것을 니가 만들지 말아라!!!!
+
+
+:< 	왼쪽 정렬
+:	오른쪽 정렬
+:^	가운데 정렬
+
+
+
+
+ofstream out{ "int 1000개.txt" };		// RAII
+이렇기 때문에 
+out.close()안할것
+
+
+(구분자)
+딜리미터를 통해서 나눌수 있음
+
+
+시험 주의!!
+	ofstream out{ "int 1000개.txt" };		// RAII
+	
+	int cnt{};
+	for (int i = 0; i < 1'000; ++i) {
+		print(out, "{:8}", uid(dre));
+		if (not(++cnt % 10))
+			out << endl;
+	}
+
+
+istream_iterator
+이터레이터 어뎁터 스트림이 녀석의 정체
+
+
+array는 컴파일시 크기가 유일한 stl
+
+
+
+
+
+
+
+
+
