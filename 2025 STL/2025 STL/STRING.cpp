@@ -10,6 +10,8 @@
 //-----------------------------------------------------------------------------------------
 
 #include <print>
+#include <algorithm>
+#include <string>
 #include "STRING.h"
 
 bool °üÂû{ false };												// 2025. 04. 08
@@ -108,6 +110,12 @@ STRING& STRING::operator=(STRING&& other)
 	return*this;
 }
 
+bool STRING::operator==(const STRING& rhs) const
+{
+	return std::equal(&p[0], &p[len], &rhs.p[0], &rhs.p[rhs.len]);
+}
+
+
 size_t STRING::size() const 
 {
 	return len;
@@ -117,6 +125,17 @@ std::ostream& operator<<(std::ostream& os, const STRING& str) {
 	for (int i = 0; i < str.len; ++i)
 		os << str.p[i];
 	return os;
+}
+
+std::istream& operator>>(std::istream& is, STRING& str)
+{
+	std::string s;
+	is >> s;
+	str.len = s.length();
+	str.p.release();
+	str.p = std::make_unique<char[]>(str.len);
+	memccpy((char*)str.p.get(), s.data(), '\0', str.len);
+	return is;
 }
 
 size_t STRING::gid{ };								// 2025. 04. 08

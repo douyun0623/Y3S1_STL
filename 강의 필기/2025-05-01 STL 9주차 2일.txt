@@ -1,0 +1,108 @@
+2025-05-01 STL 9주차 2일
+
+cout << "최대 개수 - " << v.max_size() << endl;
+얼마나 담을 수 있니?
+알려주는 것임
+최대 개수는 무의미 하다!
+
+
+덱과 벡터의 최대 원소의 수 비교!
+
+// vector 최대 원소 수  - 27310
+// deque 최대 원소 수  - 51064
+
+리스트는 test를 몇개 담을 수 있을까?
+기말 시험
+
+
+덱이 조금 느리지만 원소를 더 많이 담을 가능성이 있겠구나
+
+vector를 스코프를 넘어가서 하면 또 어떻게 달라질까???
+
+
+
+
+list
+
+
+
+	list<int> cont{1,2,3,4,5,6,7,8,9,10};
+
+	// [문제] cont의 두 번째 원소부터 끝까지 출력하라.
+	// list<int>::iterator beg = cont.begin();
+	auto beg = cont.begin();
+
+
+++beg
+beg += 1
+
+location value!
+
+
+리스트는 주소 비교 불가 
+!= 로 비교해야한다.
+
+
+auto beg = cont.begin();
+++beg;
+beg.operator++();
+어떻게 되어 있는지 알필요 없다
+
+
+list<int> cont{ 1,3,5,7,9,2,4,6,8,10 };
+
+// [문제] cont의 원소를 거꾸로 출력하라
+for (auto i = cont.rbegin(); i != cont.rend(); ++i)
+	cout << *i << " ";
+cout << endl;
+
+rbegin이 가르키는 자리는 end 자리이다.!
+근데 end자리는 가르키는 값이 없잖아 근데 10이 나와?
+i.operator*()에서 장난을 하고 있다.!!
+rbegin은 end를 가르키지만 왼쪽의 값을 리턴함 출력하라고 할때
+
+
+교과서 페이지로 가겠다.
+
+reverse_iterator가 방금 쓴것이다.
+*를 찍으면 왼쪽 값을 돌려준다고!
+https://en.cppreference.com/w/cpp/iterator/reverse_iterator
+그림도 같이 있다.
+
+
+
+
+	str.p.release();
+	str.p = std::make_unique<char[]>(str.len);
+	str.p.reset(s.data());
+
+
+
+
+
+
+
+std::istream& operator>>(std::istream& is, STRING& str)
+{
+	std::string s;
+	is >> s;
+	std::cout << s << std::endl;
+	str.len = s.length();
+	std::cout << str.len << std::endl;
+	str.p.release();
+	str.p = std::make_unique<char[]>(str.len);
+	str.p.reset(s.data());
+	return is;
+}
+
+
+s는 자원이 아니에요
+스코프를 나가면 문제!
+
+
+
+find(단어들.begin(), 단어들.end(), 단어);
+
+
+
+

@@ -4,6 +4,7 @@
 // 
 // 
 //																			2025. 4. 8 시작
+// >> 연산자																2025. 5. 1		
 //------------------------------------------------------------------------------------------
 
 #pragma once
@@ -26,6 +27,9 @@ public:
 	STRING(STRING&&);									// && -> rvalue reference
 	STRING& operator=(STRING&&);
 
+	// 2024. 04. 22 관계연산자들
+	bool operator==(const STRING& rhs) const;
+
 	// 인터페이스 함수들
 	size_t size() const;
 
@@ -35,6 +39,8 @@ private:
 	size_t id;											// 2025. 04. 08
 
 	friend std::ostream& operator<<(std::ostream& os, const STRING& str);
+	// 2025. 5. 1 
+	friend std::istream& operator>>(std::istream& is, STRING& str);
 
 	static size_t gid;									// 2025. 04. 08
 };
