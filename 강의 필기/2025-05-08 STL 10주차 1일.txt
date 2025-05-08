@@ -1,0 +1,331 @@
+2025-05-08 STL 10주차 1일
+
+
+리스트에 넣은
+!!!처리해야할 데이터!!!
+//---------------------------------------------------------------------------
+//
+2025
+STL
+화56목78
+5월
+8일
+목요일
+(10주
+1일)
+//
+6월
+19일
+목요일
+15주
+2일
+_______________________________________________________
+
+
+list<STRING> 단어들;
+
+-> find에게 찾아야할 범위를 전달( 전체도 되고, 일부분도 되겠지?)
+	begin 처음을 가르키는 위치!
+	iterators가 뭔지는 자세히 알아야겠지?
+-> val : 찾아야할 값
+find( .begin(), end(), val);	https://en.cppreference.com/w/cpp/algorithm/find
+대표적인 시퀀셜한 함수
+
+첫번째 부터 같은지 확인을 쭉 해나간다.
+find가 찾은 경우 bool로 설계를 할 수 도 있다!
+일단 find는 위치를 리턴해주는거임!
+
+
+이 알고리즘은 O(N) 알고리즘
+		-> 평균은  N/2
+
+단어를 찾지 못하면 end() 위치를 리턴하는 것이 지당하다.
+
+cpp reference : https://en.cppreference.com/w/cpp/algorithm
+
+[first, last)
+
+
+Constrained algorithms (since C++20)
+새롭게 알고리즘들을 새로 짰다!
+
+알고리즘은 3가지로 나눌수 있다.
+
+
+ ExecutionPolicy 병렬도 돌릴 수 있다. 
+
+
+기능 설명
+Returns an iterator to the first element in the range [first, last) that satisfies specific criteria (or last if there is no such iterator).
+
+1) find searches for an element equal to value (using operator==).
+3) find_if searches for an element for which predicate p returns true.
+5) find_if_not searches for an element for which predicate q returns false.
+
+
+
+for_each 이건 뭐지
+
+
+
+
+// 길이가 5인 단어만 화면에 출력하라
+for (const STRING& 단어 : 단어들) {
+	if (5 == 단어.size())
+		cout << 단어 << endl;
+}
+이런것은 고민을 해봐야해
+	-> 이런걸 이해가 잘되는것에 속한다. stl에서는 알고리즘을 쓰는 것을 권장
+	이 속에 함수가 들어간다면 알고리즘으로 바꾸는 것을 생각해봐야해
+
+
+ [] : 단항 프레드킷
+
+
+auto p = find_if(단어들.begin(), 단어들.end(), [](const STRING& 단어) {
+	return 5 == 단어.size();
+});
+if (p != 단어들.end())
+	cout << *p << endl;
+
+이러면 돌아는 가는데 하나밖에 못찾아
+
+
+{
+	auto p = find_if(p, 단어들.end(), [](const STRING& 단어) {
+		return 5 == 단어.size();
+	});
+	if (p != 단어들.end())
+		cout << *p << endl;
+
+	p
+}
+이렇게 하면 p를 검사하고 다시 찾을 수 있겠지
+이건 직접해봐요~
+
+
+
+//
+stl은 데이터가 전체로 전달된다!
+
+보통 결과도 반복자임
+발상을 전환하자! : 이 데이터를 목적지로 쓸수 있지 않을까? copy
+	이는 원본데이터를 어디든 쓸 수 있겠지
+	우리의 목적지는 화면! 이다
+	조건을 비트는 것은 predicate이라고 한다.
+	copy_if로 바뀌겠지?
+	
+화면에 쓰려면 도구가 필요한데
+이를 출력 스트림으로 표현할 수 있겠지
+
+list<STRING> 단어들{ istream_iterator<STRING>{in}, {} };
+이건 입력 스트림으로 표현한거임
+
+ostream_iterator<STRING>{cout} 이렇게 하면 화면을 가르키겠지?!?!?!?!
+copy(단어들.begin(), 단어들.end(), ostream_iterator<STRING>{cout});
+이렇게 하면 전체 단어가 출력되겠지?
+
+
+copy(단어들.begin(), 단어들.end(), ostream_iterator<STRING>{cout, "\n"});
+딜리미터를 지정할 수 있다.
+그 뒤에 어떤 것을 붙여서 가공할 수 있다.
+
+
+
+copy_if
+	로 바꾸면 알고리즘 조종! 으로 바꾸는 거죠
+
+
+return 5 == 단어.size();
+이렇게 하는 이유는 
+=로 실수하는 것을 방지하는 코드
+
+
+
+// [문제] 길이가 5인 단어만 화면에 출력하라
+copy_if(단어들.begin(), 단어들.end(), ostream_iterator<STRING>{cout, "\n"},
+	[](const STRING& 단어) {
+	return 5 == 단어.size();
+});
+
+이렇게 하면 더 쉽게 이해하기 좋을 수 있다!
+함수호출을 더 빠르게 할 수 있어
+stl적 사고
+
+for루프를 쓰면 뭔가 불안하지 않나?
+
+
+한글은 2바이트를 샌거임!
+
+//
+merge
+
+	list<string> 목록1{ "1", "55555", "333" };
+	list<string> 목록2{ "4444", "22" };
+
+목록1.merge(목록2);
+목록2는 1에 이동해서 없어진다.
+
+
+내가 만든 STRING에서는 쓸 수 없었다!
+
+1 4444 22 55555 333 : 아주 잘못된 결과
+
+
+"1" < "4444" 이걸 이용해서 merge하려고 한다
+목록1과 목록2가 정렬된 상태일때 이것이 일어나기 때문
+
+왜 그런것일까? : 검색
+할수있는 동작만 한다
+효율성
+잘못된거 배제
+
+merge는 정렬 후 merge 해야한다.
+
+
+1 22 333 4444 55555
+이런 결과가 나와야한다.
+
+스퀘줄표를 합친다고 생각을 하면 이해가 될꺼다
+
+
+우리가 만든것은 기본 정렬을 할 수 없기 때문이다
+less로 코딩되어 있을거임 찾아보삼 <
+
+
+bool STRING::operator<(const STRING& rhs) const					// 2025. 5 . 8
+{
+	return std::lexicographical_compare(p.get(), p.get() + len,
+		rhs.p.get(), rhs.p.get() + rhs.len);
+}
+이렇게 하면 사전식 비교를 할 수 있을거야
+이러면 매우 잘되는 것을 볼 수 있다
+
+
+	관찰 = true;
+	목록1.sort();
+	목록2.sort();
+	목록1.merge(목록2);
+	관찰 = false;
+포인터만 옮기고 있기때문에 빠르게 한다. 노드를 새로 만들 필요가 전혀 없기 때문이다. (스트레스 x)
+
+생성한땐 좀 구찮아함
+
+https://en.cppreference.com/w/cpp/container/list
+Operations이것을 보면 list가 잘하는 동작을 볼 수 있다.
+
+//
+unique
+	는 옆에 있는 똑같은 애를 다 지우는 거다
+	이러면 정렬 후 하면 다 사라지겠네!!
+
+
+// 
+forward_list<T> - 
+https://en.cppreference.com/w/cpp/container/forward_list
+
+포워크 리스트란?
+It is intended that forward_list have zero space or time overhead relative to a hand-written C-style singly linked list.
+Features that woul conflict with that goal have been omitted.
+
+포워드 리스트는 이런 의도로 만들었어, 공간상, 시간상의 (삽질이 없어)덧붙임이 하나도 없어 실행시간에 손해보는게 0이야. 이게 좋다고 하려면 어떤 것에 비해서 좋다고 주장해야한다. 니가 손으로 짠 c스타일 단일 연결리스트보다 속도가 절대 느리지 않을꺼야 메모리를 조금이라도 더 쓰지 않을거야 ( 최적의 코드다 )
+니가 아무리 잘짜도 못이김
+왜냐하면!! 이 주장에 반하는 내용이 있지도 않음? ( 뭔소린지 다시 봐라)
+
+
+이는 멤버 함수도 지멋대로 되어 있음
+size는 제공도 안해~
+매우 특화되어 있는 컨테이너다
+
+
+
+
+
+
+
+
+
+
+// STL Container - Containers are objects that store other objects. 
+// 1. SEquence Containers
+//		array<T, N>
+//		vector<T> - push_back() O(1)
+//		deque<T> - push_front()/push_back() O(1)
+//		list<T> - node 기반, 임의의 위치에서 삽입과 삭제 O(1)
+//				  sort(), unique(), merge(), splice();
+//		forward_list<T> -
+//			It is intended that forward_list have zero space or time overhead
+//			relative to a hand-written C-style singly linked list.
+//			Features that woul conflict with that goal have been omitted.
+
+// 정리해보자!
+
+
+std::function<T> => 모든 callable를  대표하는 함수
+1. 함수포인터
+2. 람다
+3. 클래스 오퍼레이터
+무진장 많아
+
+대표 선수를 정하자 해서 function이 만들어졌다.
+
+
+// 컨티구어스 대표!
+int a[]; 바보자료구조에서
+string s;	-> 	다이나믹하게 관리할 수 있는 	char
+vector<T>
+deque은 아니죠!
+
+STRING도 컨티구어스
+
+이들도 대표선수가 있으면 좋지 않겠니?
+std::sort() 		기본적으로 cotiguouse가 전달되어야한다.
+f() 함수 		전달만 된다면 거꾸로 찍어줄게
+
+// 
+컨티구어스를 나타내는 것을
+span이라고 대표한다!!!!!!
+
+
+void f(span<int> s )
+{
+	for (auto i = s.rbegin(); i != s.rend(); ++i)
+		cout << *i << " ";
+	cout << endl;
+}
+
+바보 자료구조라도 
+포장을 해서 똑똑하게 쓸 수 있어
+ㄷㄷㄷㄷㄷ
+
+	int a[]{ 1,2,3,4,5,5,6,7 };
+
+	// 거꾸로 출력하라.
+	f(a);
+
+	vector<int> v{ begin(a), end(a) };	// { &a[0], &a[7] };
+	f(v);
+이렇게도 가능하다.!!
+
+
+덱을 넣으면 실패한다!
+덱은 메모리가 붙어있지 않기 때문이다 
+
+
+
+이 내용은 : span :  https://en.cppreference.com/w/cpp/container/span
+어떤 오브젝트를 표현하려고, 컨티구어스 시퀀스라면 리퍼런스 할 수 있어
+나는 컴파일할떄 크기가 고정된것도, 크기가 변하는 컨티구어스도 span할 수 있어
+직접 이용하는 일은 없을건대 알아는 둬야한다!!!
+
+mds는 또 뭘까?
+
+
+
+/// 다음시간~
+iterator library
+
+
+
+
+

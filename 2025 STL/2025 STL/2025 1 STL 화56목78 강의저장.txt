@@ -7946,3 +7946,786 @@ int main()
 
 	save("메인.cpp");
 } 
+
+======================================
+저장한 시간: 2025-05-08 오후 4:05:22 목요일
+======================================
+
+//---------------------------------------------------------------------------
+// 2025 STL 화56목78	 5월 8일 목요일							(10주 1일)
+// 6월 19일 목요일 15주 2일 - 기말시험
+//---------------------------------------------------------------------------
+// STL Container - Containers are objects that store other objects. 
+// 1. SEquence Containers
+//		array<T, N>
+//		vector<T> - push_back() O(1)
+//		deque<T> - push_front()/push_back() O(1)
+//		list<T> - node 기반, 임의의 위치에서 삽입과 삭제 O(1)
+//---------------------------------------------------------------------------
+#include <iostream>
+#include <list>
+#include <fstream>
+#include <algorithm>
+#include "save.h"
+#include "STRING.h"
+using namespace std;
+
+extern bool 관찰;					// 관찰하려면 true로 설정
+
+
+//--------
+int main()
+//--------
+{
+	ifstream in{ "메인.cpp" };
+	if (not in)
+		return 20250508;
+
+	list<STRING> 단어들{ istream_iterator<STRING>{in}, {} };
+
+	// 길이가 5인 단어만 화면에 출력하라
+	for (const STRING& 단어 : 단어들) {
+		if (단어.size() == 5)
+			cout << 단어 << endl;
+	}
+
+	save("메인.cpp");
+} 
+
+======================================
+저장한 시간: 2025-05-08 오후 4:05:37 목요일
+======================================
+
+//---------------------------------------------------------------------------
+// 2025 STL 화56목78	 5월 8일 목요일							(10주 1일)
+// 6월 19일 목요일 15주 2일 - 기말시험
+//---------------------------------------------------------------------------
+// STL Container - Containers are objects that store other objects. 
+// 1. SEquence Containers
+//		array<T, N>
+//		vector<T> - push_back() O(1)
+//		deque<T> - push_front()/push_back() O(1)
+//		list<T> - node 기반, 임의의 위치에서 삽입과 삭제 O(1)
+//---------------------------------------------------------------------------
+#include <iostream>
+#include <list>
+#include <fstream>
+#include <algorithm>
+#include "save.h"
+#include "STRING.h"
+using namespace std;
+
+extern bool 관찰;					// 관찰하려면 true로 설정
+
+
+//--------
+int main()
+//--------
+{
+	ifstream in{ "메인.cpp" };
+	if (not in)
+		return 20250508;
+
+	list<STRING> 단어들{ istream_iterator<STRING>{in}, {} };
+
+	// 길이가 5인 단어만 화면에 출력하라
+	for (const STRING& 단어 : 단어들) {
+		if (단어.size() == 6)
+			cout << 단어 << endl;
+	}
+
+	save("메인.cpp");
+} 
+
+======================================
+저장한 시간: 2025-05-08 오후 4:06:23 목요일
+======================================
+
+//---------------------------------------------------------------------------
+// 2025 STL 화56목78	 5월 8일 목요일							(10주 1일)
+// 6월 19일 목요일 15주 2일 - 기말시험
+//---------------------------------------------------------------------------
+// STL Container - Containers are objects that store other objects. 
+// 1. SEquence Containers
+//		array<T, N>
+//		vector<T> - push_back() O(1)
+//		deque<T> - push_front()/push_back() O(1)
+//		list<T> - node 기반, 임의의 위치에서 삽입과 삭제 O(1)
+//---------------------------------------------------------------------------
+#include <iostream>
+#include <list>
+#include <fstream>
+#include <algorithm>
+#include "save.h"
+#include "STRING.h"
+using namespace std;
+
+extern bool 관찰;					// 관찰하려면 true로 설정
+
+
+//--------
+int main()
+//--------
+{
+	ifstream in{ "메인.cpp" };
+	if (not in)
+		return 20250508;
+
+	list<STRING> 단어들{ istream_iterator<STRING>{in}, {} };
+
+	// 길이가 5인 단어만 화면에 출력하라
+	for (const STRING& 단어 : 단어들) {
+		if (단어.size() == 5)
+			cout << 단어 << endl;
+	}
+
+	save("메인.cpp");
+} 
+
+======================================
+저장한 시간: 2025-05-08 오후 4:25:17 목요일
+======================================
+
+//---------------------------------------------------------------------------
+// 2025 STL 화56목78	 5월 8일 목요일							(10주 1일)
+// 6월 19일 목요일 15주 2일 - 기말시험
+//---------------------------------------------------------------------------
+// STL Container - Containers are objects that store other objects. 
+// 1. SEquence Containers
+//		array<T, N>
+//		vector<T> - push_back() O(1)
+//		deque<T> - push_front()/push_back() O(1)
+//		list<T> - node 기반, 임의의 위치에서 삽입과 삭제 O(1)
+//---------------------------------------------------------------------------
+#include <iostream>
+#include <list>
+#include <fstream>
+#include <algorithm>
+#include "save.h"
+#include "STRING.h"
+using namespace std;
+
+extern bool 관찰;					// 관찰하려면 true로 설정
+
+
+//--------
+int main()
+//--------
+{
+	ifstream in{ "메인.cpp" };
+	if (not in)
+		return 20250508;
+
+	list<STRING> 단어들{ istream_iterator<STRING>{in}, {} };
+
+	// [문제] 길이가 5인 단어만 화면에 출력하라
+	copy(단어들.begin(), 단어들.end(), ostream_iterator<STRING>{cout, "\n"});
+	
+	save("메인.cpp");
+} 
+
+======================================
+저장한 시간: 2025-05-08 오후 4:26:46 목요일
+======================================
+
+//---------------------------------------------------------------------------
+// 2025 STL 화56목78	 5월 8일 목요일							(10주 1일)
+// 6월 19일 목요일 15주 2일 - 기말시험
+//---------------------------------------------------------------------------
+// STL Container - Containers are objects that store other objects. 
+// 1. SEquence Containers
+//		array<T, N>
+//		vector<T> - push_back() O(1)
+//		deque<T> - push_front()/push_back() O(1)
+//		list<T> - node 기반, 임의의 위치에서 삽입과 삭제 O(1)
+//---------------------------------------------------------------------------
+#include <iostream>
+#include <list>
+#include <fstream>
+#include <algorithm>
+#include "save.h"
+#include "STRING.h"
+using namespace std;
+
+extern bool 관찰;					// 관찰하려면 true로 설정
+
+
+//--------
+int main()
+//--------
+{
+	ifstream in{ "메인.cpp" };
+	if (not in)
+		return 20250508;
+
+	list<STRING> 단어들{ istream_iterator<STRING>{in}, {} };
+
+	// [문제] 길이가 5인 단어만 화면에 출력하라
+	copy_if(단어들.begin(), 단어들.end(), ostream_iterator<STRING>{cout, "\n"},
+		[](const STRING& 단어) {
+		return 5 == 단어.size();
+	});
+	
+	save("메인.cpp");
+} 
+
+======================================
+저장한 시간: 2025-05-08 오후 4:29:38 목요일
+======================================
+
+//---------------------------------------------------------------------------
+// 2025 STL 화56목78	 5월 8일 목요일							(10주 1일)
+// 6월 19일 목요일 15주 2일 - 기말시험
+//---------------------------------------------------------------------------
+// STL Container - Containers are objects that store other objects. 
+// 1. SEquence Containers
+//		array<T, N>
+//		vector<T> - push_back() O(1)
+//		deque<T> - push_front()/push_back() O(1)
+//		list<T> - node 기반, 임의의 위치에서 삽입과 삭제 O(1)
+//				  sort(), unique(), merge(), splice();
+//---------------------------------------------------------------------------
+#include <iostream>
+#include <list>
+#include <fstream>
+#include <algorithm>
+#include "save.h"
+#include "STRING.h"
+using namespace std;
+
+extern bool 관찰;					// 관찰하려면 true로 설정
+
+
+//--------
+int main()
+//--------
+{
+	ifstream in{ "메인.cpp" };
+	if (not in)
+		return 20250508;
+
+	list<STRING> 단어들{ istream_iterator<STRING>{in}, {} };
+
+	// [문제] 길이가 5인 단어만 화면에 출력하라
+	copy_if(단어들.begin(), 단어들.end(), ostream_iterator<STRING>{cout, "\n"},
+		[](const STRING& 단어) {
+		return 5 == 단어.size();
+	});
+	
+	save("메인.cpp");
+} 
+
+======================================
+저장한 시간: 2025-05-08 오후 4:34:23 목요일
+======================================
+
+//---------------------------------------------------------------------------
+// 2025 STL 화56목78	 5월 8일 목요일							(10주 1일)
+// 6월 19일 목요일 15주 2일 - 기말시험
+//---------------------------------------------------------------------------
+// STL Container - Containers are objects that store other objects. 
+// 1. SEquence Containers
+//		array<T, N>
+//		vector<T> - push_back() O(1)
+//		deque<T> - push_front()/push_back() O(1)
+//		list<T> - node 기반, 임의의 위치에서 삽입과 삭제 O(1)
+//				  sort(), unique(), merge(), splice();
+//---------------------------------------------------------------------------
+#include <iostream>
+#include <list>
+#include <fstream>
+#include <algorithm>
+#include <string>
+#include "save.h"
+#include "STRING.h"
+using namespace std;
+
+extern bool 관찰;					// 관찰하려면 true로 설정
+
+
+//--------
+int main()
+//--------
+{
+	list<string> 목록1{ "1", "55555", "333" };
+	list<string> 목록2{ "4444", "22" };
+
+	목록1.merge(목록2);
+
+	for (const string& 단어 : 목록1)
+		cout << 단어 << " ";
+	cout << endl;
+
+	save("메인.cpp");
+} 
+
+======================================
+저장한 시간: 2025-05-08 오후 4:34:59 목요일
+======================================
+
+//---------------------------------------------------------------------------
+// 2025 STL 화56목78	 5월 8일 목요일							(10주 1일)
+// 6월 19일 목요일 15주 2일 - 기말시험
+//---------------------------------------------------------------------------
+// STL Container - Containers are objects that store other objects. 
+// 1. SEquence Containers
+//		array<T, N>
+//		vector<T> - push_back() O(1)
+//		deque<T> - push_front()/push_back() O(1)
+//		list<T> - node 기반, 임의의 위치에서 삽입과 삭제 O(1)
+//				  sort(), unique(), merge(), splice();
+//---------------------------------------------------------------------------
+#include <iostream>
+#include <list>
+#include <fstream>
+#include <algorithm>
+#include <string>
+#include "save.h"
+#include "STRING.h"
+using namespace std;
+
+extern bool 관찰;					// 관찰하려면 true로 설정
+
+
+//--------
+int main()
+//--------
+{
+	list<string> 목록1{ "1", "55555", "333" };
+	list<string> 목록2{ "4444", "22" };
+
+	목록1.merge(목록2);
+
+	for (const string& 단어 : 목록1)
+		cout << 단어 << " ";
+	cout << endl;
+
+	for (const string& 단어 : 목록2)
+		cout << 단어 << " ";
+	cout << endl;
+
+	save("메인.cpp");
+} 
+
+======================================
+저장한 시간: 2025-05-08 오후 4:35:34 목요일
+======================================
+
+//---------------------------------------------------------------------------
+// 2025 STL 화56목78	 5월 8일 목요일							(10주 1일)
+// 6월 19일 목요일 15주 2일 - 기말시험
+//---------------------------------------------------------------------------
+// STL Container - Containers are objects that store other objects. 
+// 1. SEquence Containers
+//		array<T, N>
+//		vector<T> - push_back() O(1)
+//		deque<T> - push_front()/push_back() O(1)
+//		list<T> - node 기반, 임의의 위치에서 삽입과 삭제 O(1)
+//				  sort(), unique(), merge(), splice();
+//---------------------------------------------------------------------------
+#include <iostream>
+#include <list>
+#include <fstream>
+#include <algorithm>
+#include <string>
+#include "save.h"
+#include "STRING.h"
+using namespace std;
+
+extern bool 관찰;					// 관찰하려면 true로 설정
+
+
+//--------
+int main()
+//--------
+{
+	list<string> 목록1{ "1", "55555", "333" };
+	list<string> 목록2{ "4444", "22" };
+
+	목록1.merge(목록2);
+
+	for (const string& 단어 : 목록1)
+		cout << 단어 << " ";
+	cout << endl;
+
+	for (const string& 단어 : 목록2)
+		cout << 단어 << " ";
+	cout << endl;
+
+	save("메인.cpp");
+} 
+
+======================================
+저장한 시간: 2025-05-08 오후 4:37:56 목요일
+======================================
+
+//---------------------------------------------------------------------------
+// 2025 STL 화56목78	 5월 8일 목요일							(10주 1일)
+// 6월 19일 목요일 15주 2일 - 기말시험
+//---------------------------------------------------------------------------
+// STL Container - Containers are objects that store other objects. 
+// 1. SEquence Containers
+//		array<T, N>
+//		vector<T> - push_back() O(1)
+//		deque<T> - push_front()/push_back() O(1)
+//		list<T> - node 기반, 임의의 위치에서 삽입과 삭제 O(1)
+//				  sort(), unique(), merge(), splice();
+//---------------------------------------------------------------------------
+#include <iostream>
+#include <list>
+#include <fstream>
+#include <algorithm>
+#include <string>
+#include "save.h"
+#include "STRING.h"
+using namespace std;
+
+extern bool 관찰;					// 관찰하려면 true로 설정
+
+
+//--------
+int main()
+//--------
+{
+	list<string> 목록1{ "1", "55555", "333" };
+	list<string> 목록2{ "4444", "22" };
+
+	// 정렬 후 merge 해야한다.
+	목록1.sort();
+	목록2.sort();
+	목록1.merge(목록2);
+
+	for (const string& 단어 : 목록1)
+		cout << 단어 << " ";
+	cout << endl;
+
+	for (const string& 단어 : 목록2)
+		cout << 단어 << " ";
+	cout << endl;
+
+	save("메인.cpp");
+} 
+
+======================================
+저장한 시간: 2025-05-08 오후 4:43:59 목요일
+======================================
+
+//---------------------------------------------------------------------------
+// 2025 STL 화56목78	 5월 8일 목요일							(10주 1일)
+// 6월 19일 목요일 15주 2일 - 기말시험
+//---------------------------------------------------------------------------
+// STL Container - Containers are objects that store other objects. 
+// 1. SEquence Containers
+//		array<T, N>
+//		vector<T> - push_back() O(1)
+//		deque<T> - push_front()/push_back() O(1)
+//		list<T> - node 기반, 임의의 위치에서 삽입과 삭제 O(1)
+//				  sort(), unique(), merge(), splice();
+//---------------------------------------------------------------------------
+#include <iostream>
+#include <list>
+#include <fstream>
+#include <algorithm>
+#include <string>
+#include "save.h"
+#include "STRING.h"
+using namespace std;
+
+extern bool 관찰;					// 관찰하려면 true로 설정
+
+
+//--------
+int main()
+//--------
+{
+	list<STRING> 목록1{ "1", "55555", "333" };
+	list<STRING> 목록2{ "4444", "22" };
+
+	// 정렬 후 merge 해야한다.
+	목록1.sort();
+	목록2.sort();
+	목록1.merge(목록2);
+
+	for (const STRING& 단어 : 목록1)
+		cout << 단어 << " ";
+	cout << endl;
+
+	for (const STRING& 단어 : 목록2)
+		cout << 단어 << " ";
+	cout << endl;
+
+	save("메인.cpp");
+} 
+
+======================================
+저장한 시간: 2025-05-08 오후 4:45:24 목요일
+======================================
+
+//---------------------------------------------------------------------------
+// 2025 STL 화56목78	 5월 8일 목요일							(10주 1일)
+// 6월 19일 목요일 15주 2일 - 기말시험
+//---------------------------------------------------------------------------
+// STL Container - Containers are objects that store other objects. 
+// 1. SEquence Containers
+//		array<T, N>
+//		vector<T> - push_back() O(1)
+//		deque<T> - push_front()/push_back() O(1)
+//		list<T> - node 기반, 임의의 위치에서 삽입과 삭제 O(1)
+//				  sort(), unique(), merge(), splice();
+//---------------------------------------------------------------------------
+#include <iostream>
+#include <list>
+#include <fstream>
+#include <algorithm>
+#include <string>
+#include "save.h"
+#include "STRING.h"
+using namespace std;
+
+extern bool 관찰;					// 관찰하려면 true로 설정
+
+
+//--------
+int main()
+//--------
+{
+	list<STRING> 목록1{ "1", "55555", "333" };
+	list<STRING> 목록2{ "4444", "22" };
+
+	// 정렬 후 merge 해야한다.
+	목록1.sort();
+	목록2.sort();
+
+	관찰 = true;
+	목록1.merge(목록2);
+	관찰 = false;
+
+	for (const STRING& 단어 : 목록1)
+		cout << 단어 << " ";
+	cout << endl;
+
+	for (const STRING& 단어 : 목록2)
+		cout << 단어 << " ";
+	cout << endl;
+
+	save("메인.cpp");
+} 
+
+======================================
+저장한 시간: 2025-05-08 오후 4:45:48 목요일
+======================================
+
+//---------------------------------------------------------------------------
+// 2025 STL 화56목78	 5월 8일 목요일							(10주 1일)
+// 6월 19일 목요일 15주 2일 - 기말시험
+//---------------------------------------------------------------------------
+// STL Container - Containers are objects that store other objects. 
+// 1. SEquence Containers
+//		array<T, N>
+//		vector<T> - push_back() O(1)
+//		deque<T> - push_front()/push_back() O(1)
+//		list<T> - node 기반, 임의의 위치에서 삽입과 삭제 O(1)
+//				  sort(), unique(), merge(), splice();
+//---------------------------------------------------------------------------
+#include <iostream>
+#include <list>
+#include <fstream>
+#include <algorithm>
+#include <string>
+#include "save.h"
+#include "STRING.h"
+using namespace std;
+
+extern bool 관찰;					// 관찰하려면 true로 설정
+
+
+//--------
+int main()
+//--------
+{
+	list<STRING> 목록1{ "1", "55555", "333" };
+	list<STRING> 목록2{ "4444", "22" };
+
+	// 정렬 후 merge 해야한다.
+	관찰 = true;
+	목록1.sort();
+	목록2.sort();
+
+	
+	목록1.merge(목록2);
+	관찰 = false;
+
+	for (const STRING& 단어 : 목록1)
+		cout << 단어 << " ";
+	cout << endl;
+
+	for (const STRING& 단어 : 목록2)
+		cout << 단어 << " ";
+	cout << endl;
+
+	save("메인.cpp");
+} 
+
+======================================
+저장한 시간: 2025-05-08 오후 4:56:23 목요일
+======================================
+
+//---------------------------------------------------------------------------
+// 2025 STL 화56목78	 5월 8일 목요일							(10주 1일)
+// 6월 19일 목요일 15주 2일 - 기말시험
+//---------------------------------------------------------------------------
+// STL Container - Containers are objects that store other objects. 
+// 1. SEquence Containers
+//		array<T, N>
+//		vector<T> - push_back() O(1)
+//		deque<T> - push_front()/push_back() O(1)
+//		list<T> - node 기반, 임의의 위치에서 삽입과 삭제 O(1)
+//				  sort(), unique(), merge(), splice();
+//		forward_list<T> -
+//---------------------------------------------------------------------------
+#include <iostream>
+#include <list>
+#include <fstream>
+#include <algorithm>
+#include <string>
+#include <forward_list>
+#include "save.h"
+#include "STRING.h"
+using namespace std;
+
+extern bool 관찰;					// 관찰하려면 true로 설정
+
+
+//--------
+int main()
+//--------
+{
+	forward_list<STRING> cont;
+
+	cout << sizeof cont << endl;
+
+	save("메인.cpp");
+} 
+
+======================================
+저장한 시간: 2025-05-08 오후 4:59:05 목요일
+======================================
+
+//---------------------------------------------------------------------------
+// 2025 STL 화56목78	 5월 8일 목요일							(10주 1일)
+// 6월 19일 목요일 15주 2일 - 기말시험
+//---------------------------------------------------------------------------
+// STL Container - Containers are objects that store other objects. 
+// 1. SEquence Containers
+//		array<T, N>
+//		vector<T> - push_back() O(1)
+//		deque<T> - push_front()/push_back() O(1)
+//		list<T> - node 기반, 임의의 위치에서 삽입과 삭제 O(1)
+//				  sort(), unique(), merge(), splice();
+//		forward_list<T> -
+//			It is intended that forward_list have zero space or time overhead
+//			relative to a hand-written C-style singly linked list.
+//			Features that woul conflict with that goal have been omitted.
+//---------------------------------------------------------------------------
+#include <iostream>
+#include <list>
+#include <fstream>
+#include <algorithm>
+#include <string>
+#include <forward_list>
+#include "save.h"
+#include "STRING.h"
+using namespace std;
+
+extern bool 관찰;					// 관찰하려면 true로 설정
+
+
+//--------
+int main()
+//--------
+{
+	forward_list<STRING> cont;
+
+	cout << sizeof cont << endl;
+
+	save("메인.cpp");
+} 
+
+======================================
+저장한 시간: 2025-05-08 오후 5:06:42 목요일
+======================================
+
+//---------------------------------------------------------------------------
+// 2025 STL 화56목78	 5월 8일 목요일							(10주 1일)
+// 6월 19일 목요일 15주 2일 - 기말시험
+//---------------------------------------------------------------------------
+#include <iostream>
+#include <array>
+#include <vector>
+#include <deque>
+#include <span>
+#include "save.h"
+#include "STRING.h"
+using namespace std;
+
+extern bool 관찰;					// 관찰하려면 true로 설정
+
+void f(span<int> s )
+{
+	for (auto i = s.rbegin(); i != s.rend(); ++i)
+		cout << *i << " ";
+	cout << endl;
+}
+
+//--------
+int main()
+//--------
+{
+	int a[]{ 1,2,3,4,5,5,6,7 };
+
+	// 거꾸로 출력하라.
+	f(a);
+
+	save("메인.cpp");
+} 
+
+======================================
+저장한 시간: 2025-05-08 오후 5:11:24 목요일
+======================================
+
+//---------------------------------------------------------------------------
+// 2025 STL 화56목78	 5월 8일 목요일							(10주 1일)
+// 6월 19일 목요일 15주 2일 - 기말시험
+//---------------------------------------------------------------------------
+#include <iostream>
+#include <array>
+#include <vector>
+#include <deque>
+#include <span>
+#include "save.h"
+#include "STRING.h"
+using namespace std;
+
+extern bool 관찰;					// 관찰하려면 true로 설정
+
+void f(span<int> s )
+{
+	for (auto i = s.rbegin(); i != s.rend(); ++i)
+		cout << *i << " ";
+	cout << endl;
+}
+
+//--------
+int main()
+//--------
+{
+	int a[]{ 1,2,3,4,5,5,6,7 };
+
+	// 거꾸로 출력하라.
+	f(a);
+
+	vector<int> v{ begin(a), end(a) };	// { &a[0], &a[7] };
+	f(v);
+
+	save("메인.cpp");
+} 
