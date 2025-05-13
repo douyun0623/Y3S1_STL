@@ -1,13 +1,14 @@
 //------------------------------------------------------------------------------------------
-// STRING.h - std::string과 유사한 클래스이다
+// STRING.cpp - std::string과 유사한 클래스이다
 //			  STL의 container로 동작할 수 있게 코딩해 나간다
 // 
 // 
 //																			2025. 4. 8 시작
 // 
 // 
-// 이동생성과 이동생성연산자												2025. 4. 10 시작
+// 2025. 4. 10		이동생성과 이동생성연산자											
 // 2025. 5. 8		operator <
+// 2025. 5. 13		begin(), end()
 //-----------------------------------------------------------------------------------------
 
 #include <print>
@@ -126,6 +127,27 @@ bool STRING::operator<(const STRING& rhs) const					// 2025. 5 . 8
 size_t STRING::size() const 
 {
 	return len;
+}
+
+// begin(), end()
+char* STRING::begin() const
+{
+	return p.get();			// return &p[0]
+}
+
+char* STRING::end() const
+{
+	return p.get() + len;	// return &p[len]
+}
+
+STRING_Reverse_Iterator STRING::rbegin() const
+{
+	return STRING_Reverse_Iterator{ p.get() + len };
+}
+
+STRING_Reverse_Iterator STRING::rend() const
+{
+	return STRING_Reverse_Iterator{ p.get() };
 }
 
 std::ostream& operator<<(std::ostream& os, const STRING& str) {
