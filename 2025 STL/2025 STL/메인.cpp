@@ -9,13 +9,7 @@
 //---------------------------------------------------------------------------
 
 #include <iostream>
-#include <iterator>
-#include <string>
-#include <array>
-#include <vector>
-#include <deque>
-#include <list>
-#include <forward_list>
+#include <algorithm>
 #include "save.h"
 #include "STRING.h"
 using namespace std;
@@ -25,31 +19,22 @@ extern bool 관찰;					// 관찰하려면 true로 설정
 template<class 반복자>
 void f( 반복자 i ) 
 {
-	// 어떤 종류
-	cout<< "반복자의 반복자 - " << typeid(반복자::iterator_category).name() << endl;
+	cout << typeid(iterator_traits<반복자>::iterator_category).name() << endl;
+	
+	// 벡터는 C++20의 concept을 이용하여 contiguous임을 판정할 수 있다.
+	cout << "벡터의 반복자 - " << typeid(반복자::iterator_concept).name() << endl;
 }
 
 //--------
 int main()
 //--------
 {
-	// [문제] 반복자는 종류(6 category)가 있다. 
-	// 함수 f는 반복자를 인자로 받아 어떤 종류의 반복자인지 화면에 출력하는 함수이다ㅏ.
-	// 다음 코드가 문제 없이 실행되게 하자
+	STRING s{ "2025 5 15" };
 
-	array<int, 2> a;
-	f(a.begin());
+	// [문제] 문제없이 실행되게 하라.
+	sort(s.begin(), s.end());
 
-	vector<char> v;
-	f(v.end());
-
-	f(deque<STRING>::iterator{});
-
-	f(list<int>{}.rbegin());
-
-	f(forward_list<int>::const_iterator{});
-
-	f(ostream_iterator<char>{cout});
+	cout << s << endl;				// "  0122555"	
 
 	save("메인.cpp");
 } 
