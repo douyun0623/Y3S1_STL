@@ -1,40 +1,63 @@
 //---------------------------------------------------------------------------
-// 2025 STL 화56목78	 5월 15일 목요일							(11주 1일)
+// 2025 STL 화56목78	 5월 20일 화요일							(11주 2일)
 // 6월 19일 목요일 15주 2일 - 기말시험
 //---------------------------------------------------------------------------
-// Iterator - Iterators are a generalization of pointers that 
-// allow a C++ program to work with different data structures in a uniform manner. 
-// 
-// 반복자는 클래스로 코딩해야 합니다.
+// 반복자와 알고리즘
 //---------------------------------------------------------------------------
 
 #include <iostream>
 #include <algorithm>
+#include <vector>
 #include "save.h"
 #include "STRING.h"
 using namespace std;
 
 extern bool 관찰;					// 관찰하려면 true로 설정
 
-template<class 반복자>
-void f( 반복자 i ) 
+template <class 반복자,class 값>
+반복자 my_find(반복자 b, 반복자 e, 값 v)
 {
-	cout << typeid(iterator_traits<반복자>::iterator_category).name() << endl;
-	
-	// 벡터는 C++20의 concept을 이용하여 contiguous임을 판정할 수 있다.
-	cout << "벡터의 반복자 - " << typeid(반복자::iterator_concept).name() << endl;
+	while (b != e) {
+		if (*b == v) {
+			return b;
+		}
+		++b;
+	}
+	return b;
+}
+
+template <class 반복자, class Pred>
+반복자 my_find_if(반복자 시작, 반복자 끝, Pred f) 
+{
+	for (; 시작 != 끝; ++시작) {
+		if (f(*시작))
+			return 시작;
+	}
+	return 끝;
+}
+
+template <class 반복자, class 목적지반복자>
+void my_copy(반복자 b, 반복자 e, 목적지반복자 d) 
+{
+	while (b != e) {
+		*d = *b;
+		++b;
+		++d;
+	}
 }
 
 //--------
 int main()
 //--------
 {
-	STRING s{ "2025 5 15" };
+	STRING s{ "반복자를 사용한 알고리즘을 연습 중" };
+	vector<char> v{ '1' };
 
-	// [문제] 문제없이 실행되게 하라.
-	sort(s.begin(), s.end());
-
-	cout << s << endl;				// "  0122555"	
+	my_copy(s.begin(), s.end(), back_inserter(v));
+	
+	for (char c : v)
+		cout << c;
+	cout << endl;
 
 	save("메인.cpp");
 } 

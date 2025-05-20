@@ -9,6 +9,7 @@
 // begin(), end()															2025. 5. 13
 // 역방향 반복자는 반드시 클래스로 제공										2025. 5. 13
 // 반복자도 당연히 클래스로 코딩해야 함										2025. 5. 15
+// 랜덤반복자가 되려면 이런 연산들을 지원										2025. 5. 20
 //------------------------------------------------------------------------------------------
 
 #pragma once
@@ -25,23 +26,46 @@ public:
 	using iterator_category = std::random_access_iterator_tag;
 
 public:
+	STRING_Iterator() = default;
 	STRING_Iterator(char* p) : p{p}{}
 
 	//  반복자라면 최소한 다음 기능을 제공해야 함
-	char operator*() const {
+	char& operator*() const {
 		return *p;
 	}
 
-	char* operator++() {
-		return ++p;
+	STRING_Iterator operator++() {
+		return STRING_Iterator(++p);
 	}
 
 	bool operator==(const STRING_Iterator& rhs) const {
 		return p == rhs.p;
 	}
 
+	// 랜덤반복자가 되고 싶다.	- 2025. 5 . 20
+	difference_type operator-(const STRING_Iterator& rhs) const {
+		return p - rhs.p;
+	}
+
+	STRING_Iterator operator--() {
+		return --p;
+	}
+
+	STRING_Iterator operator-(difference_type n )const {
+		return p - n;
+	}
+
+	STRING_Iterator operator+(difference_type n)const {
+		return p + n;
+	}
+
+	auto operator <=>(const STRING_Iterator& rhs)const {
+		return p <=> rhs.p;
+	}
+
+
 private:
-	char* p;
+	char* p{};
 };
 
 // 반복자 어댑터
