@@ -1,63 +1,46 @@
 //---------------------------------------------------------------------------
-// 2025 STL 화56목78	 5월 20일 화요일							(11주 2일)
+// 2025 STL 화56목78	 5월 22일 목요일							(12주 1일)
 // 6월 19일 목요일 15주 2일 - 기말시험
 //---------------------------------------------------------------------------
-// 반복자와 알고리즘
+// Associative Container - key와 연관된 value를 항상 정렬상태로 유지한다.
+//						   정렬은 key값을 기준으로 한다.
+//	set	/ mutiset	- key == value
+//  map	/ multimap	- pair<key, value>
 //---------------------------------------------------------------------------
 
 #include <iostream>
-#include <algorithm>
-#include <vector>
+#include <set>
+#include <ranges>
 #include "save.h"
 #include "STRING.h"
 using namespace std;
 
 extern bool 관찰;					// 관찰하려면 true로 설정
 
-template <class 반복자,class 값>
-반복자 my_find(반복자 b, 반복자 e, 값 v)
-{
-	while (b != e) {
-		if (*b == v) {
-			return b;
-		}
-		++b;
+//  template을 specialization 한다.
+template <>
+struct std::less<STRING>{
+	bool operator()(const STRING& a, const STRING& b) const
+	{
+		return a.size() < b.size();
 	}
-	return b;
-}
-
-template <class 반복자, class Pred>
-반복자 my_find_if(반복자 시작, 반복자 끝, Pred f) 
-{
-	for (; 시작 != 끝; ++시작) {
-		if (f(*시작))
-			return 시작;
-	}
-	return 끝;
-}
-
-template <class 반복자, class 목적지반복자>
-void my_copy(반복자 b, 반복자 e, 목적지반복자 d) 
-{
-	while (b != e) {
-		*d = *b;
-		++b;
-		++d;
-	}
-}
+};
 
 //--------
 int main()
 //--------
 {
-	STRING s{ "반복자를 사용한 알고리즘을 연습 중" };
-	vector<char> v{ '1' };
+	class Dog{
+	public:
+		bool operator<(const Dog&)	const {
+			return true;
+		}
+	};
+	set<Dog> s;
+	s.insert(Dog{});
 
-	my_copy(s.begin(), s.end(), back_inserter(v));
-	
-	for (char c : v)
-		cout << c;
-	cout << endl;
+	// less<Dog>
+	// Dog.operator<(rhs)
 
 	save("메인.cpp");
 } 

@@ -4,12 +4,14 @@
 // 
 // 
 //																			2025. 4. 8 시작
-// >> 연산자																	2025. 5. 1
-// > 연산자																	2025. 5. 8		
+// >> 연산자																2025. 5. 1
+// < 연산자																	2025. 5. 8		
 // begin(), end()															2025. 5. 13
 // 역방향 반복자는 반드시 클래스로 제공										2025. 5. 13
 // 반복자도 당연히 클래스로 코딩해야 함										2025. 5. 15
-// 랜덤반복자가 되려면 이런 연산들을 지원										2025. 5. 20
+// 랜덤반복자가 되려면 이런 연산들을 지원									2025. 5. 20
+// <=> 연산자																2025. 5. 22
+// std::less를 특수화														2025. 5. 22
 //------------------------------------------------------------------------------------------
 
 #pragma once
@@ -102,9 +104,16 @@ public:
 	STRING(STRING&&);									// && -> rvalue reference
 	STRING& operator=(STRING&&);
 
-	// 2024. 04. 22 관계연산자들
-	bool operator==(const STRING& rhs) const;
+	// 2025. 04. 22 관계연산자들
+	//bool operator==(const STRING& rhs) const;
 	bool operator<(const STRING& rhs)const;				// 2025. 5. 8
+	
+	// 2025. 5. 22
+	// 모든 관계연산자를 대체하는 three-way comparison operator
+	auto operator<=>(const STRING& rhs) const {
+		return std::lexicographical_compare(p.get(), p.get() + len,
+			rhs.p.get(), rhs.p.get() + rhs.len);
+	}
 
 	// 인터페이스 함수들
 	size_t size() const;
