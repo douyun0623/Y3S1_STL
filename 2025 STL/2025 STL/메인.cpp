@@ -1,63 +1,51 @@
 //---------------------------------------------------------------------------
-// 2025 STL 화56목78	 5월 20일 화요일							(11주 2일)
+// 2025 STL 화56목78	 5월 27일 화요일							(12주 2일)
 // 6월 19일 목요일 15주 2일 - 기말시험
 //---------------------------------------------------------------------------
 // 반복자와 알고리즘
 //---------------------------------------------------------------------------
 
 #include <iostream>
+#include <fstream>
 #include <algorithm>
 #include <vector>
+#include <set>
 #include "save.h"
 #include "STRING.h"
 using namespace std;
 
 extern bool 관찰;					// 관찰하려면 true로 설정
 
-template <class 반복자,class 값>
-반복자 my_find(반복자 b, 반복자 e, 값 v)
-{
-	while (b != e) {
-		if (*b == v) {
-			return b;
-		}
-		++b;
-	}
-	return b;
-}
+// 강의자료 "이상한 나라의 앨리스.txt"를 다운받는다.
+// [1] 여기에 있는 모든 단어를 multiset<STRING>에 저장하라.
+// [2] 모두 몇 단어인지 화면에 출력하라.	- 26626
 
-template <class 반복자, class Pred>
-반복자 my_find_if(반복자 시작, 반복자 끝, Pred f) 
-{
-	for (; 시작 != 끝; ++시작) {
-		if (f(*시작))
-			return 시작;
-	}
-	return 끝;
-}
-
-template <class 반복자, class 목적지반복자>
-void my_copy(반복자 b, 반복자 e, 목적지반복자 d) 
-{
-	while (b != e) {
-		*d = *b;
-		++b;
-		++d;
-	}
-}
 
 //--------
 int main()
 //--------
 {
-	STRING s{ "반복자를 사용한 알고리즘을 연습 중" };
-	vector<char> v{ '1' };
+	ifstream in{ "이상한 나라의 앨리스.txt" };
+	if (not in) {
+		cout << "파일?" << endl;
+		return 20250527;
+	}
 
-	my_copy(s.begin(), s.end(), back_inserter(v));
-	
-	for (char c : v)
-		cout << c;
+	multiset<STRING> ms{ istream_iterator<STRING>{in}, {} };
+	cout << "읽은 단어 수 - " << ms.size() << endl;		// 26626
+
+	for (const STRING& s : ms)
+		cout << s << " ";
 	cout << endl;
+
+	// 동일 단어가 몇 개 있는지 알려주자
+	while (true) {
+		cout << "찾을 단어? ";
+		STRING 단어;
+		cin >> 단어;
+
+		cout << ms.count(단어) << "개 있습니다." << endl;
+	}
 
 	save("메인.cpp");
 } 
