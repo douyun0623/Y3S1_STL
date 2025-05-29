@@ -105,7 +105,7 @@ public:
 	STRING& operator=(STRING&&);
 
 	// 2025. 04. 22 관계연산자들
-	//bool operator==(const STRING& rhs) const;
+	bool operator==(const STRING& rhs) const;
 	bool operator<(const STRING& rhs)const;				// 2025. 5. 8
 	
 	// 2025. 5. 22

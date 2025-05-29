@@ -113,11 +113,11 @@ STRING& STRING::operator=(STRING&& other)
 }
 
 // 관계 연산자들
-//bool STRING::operator==(const STRING& rhs) const
-//{
-//	return std::equal(&p[0], &p[len], &rhs.p[0], &rhs.p[rhs.len]);
-//}
-//
+bool STRING::operator==(const STRING& rhs) const
+{
+	return std::equal(&p[0], &p[len], &rhs.p[0], &rhs.p[rhs.len]);
+}
+
 bool STRING::operator<(const STRING& rhs) const					// 2025. 5 . 8
 {
 	return std::lexicographical_compare(p.get(), p.get() + len,
