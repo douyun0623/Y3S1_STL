@@ -11808,3 +11808,1059 @@ int main()
 		cout << 단어 << " - " << 개수 << endl;
 		//println("{:20} - {:}", 단어[0], 개수);
 } 
+
+======================================
+저장한 시간: 2025-06-05 오후 3:38:02 목요일
+======================================
+
+//---------------------------------------------------------------------------
+// 2025 STL 화56목78	 6월 5일 목요일							(13주 2일)
+// 6월 19일 목요일 15주 2일 - 기말시험
+//---------------------------------------------------------------------------
+// Associative Container - key와 연관된 value를 항상 정렬상태로 유지한다.
+//						   정렬은 key값을 기준으로 한다.
+//	set	/ mutiset	- key == value
+//  map	/ multimap	- pair<key, value>
+//---------------------------------------------------------------------------
+
+#include <iostream>
+#include <fstream>
+#include <algorithm>
+#include <vector>
+#include <format>
+#include <print>
+#include <map>
+#include "save.h"
+#include "STRING.h"
+using namespace std;
+
+extern bool 관찰;					// 관찰하려면 true로 설정
+
+// 강의자료 "이상한 나라의 앨리스.txt"를 다운받는다.
+// [1] 여기에 있는 모든 단어를 multiset<STRING>에 저장하라.
+// [2] 모두 몇 단어인지 화면에 출력하라.	- 26626
+// [3] 단어와 사용횟수를 화면에 출력하라.
+// [4] 가장 많이 사용된 단어부터 단어와 횟수를 모두 출력하라.
+//		the - 1xxx
+
+//--------
+int main()
+//--------
+{
+	save("메인.cpp");
+
+	ifstream in{ "이상한 나라의 앨리스.txt" };
+	if (not in) {
+		cout << "파일?" << endl;
+		return 20250527;
+	}
+
+	map<STRING, size_t> wordNum;
+
+	STRING 단어;
+	while (in >> 단어)
+		wordNum[단어]++;
+	
+	vector<pair<STRING, size_t>> 정렬된목록{ wordNum.begin(), wordNum.end() };
+	sort(정렬된목록.begin(), 정렬된목록.end(),
+		[](const auto& a, const auto& b) {
+		return a.second > b.second; // 횟수 기준 내림차순
+	});
+
+	for (auto [단어, 개수] : wordNum)
+		cout << 단어 << " - " << 개수 << endl;
+		//println("{:20} - {:}", 단어[0], 개수);
+} 
+
+======================================
+저장한 시간: 2025-06-05 오후 3:38:31 목요일
+======================================
+
+//---------------------------------------------------------------------------
+// 2025 STL 화56목78	 6월 5일 목요일							(13주 2일)
+// 6월 19일 목요일 15주 2일 - 기말시험
+//---------------------------------------------------------------------------
+// Associative Container - key와 연관된 value를 항상 정렬상태로 유지한다.
+//						   정렬은 key값을 기준으로 한다.
+//	set	/ mutiset	- key == value
+//  map	/ multimap	- pair<key, value>
+//---------------------------------------------------------------------------
+
+#include <iostream>
+#include <fstream>
+#include <algorithm>
+#include <vector>
+#include <format>
+#include <print>
+#include <map>
+#include "save.h"
+#include "STRING.h"
+using namespace std;
+
+extern bool 관찰;					// 관찰하려면 true로 설정
+
+// 강의자료 "이상한 나라의 앨리스.txt"를 다운받는다.
+// [1] 여기에 있는 모든 단어를 multiset<STRING>에 저장하라.
+// [2] 모두 몇 단어인지 화면에 출력하라.	- 26626
+// [3] 단어와 사용횟수를 화면에 출력하라.
+// [4] 가장 많이 사용된 단어부터 단어와 횟수를 모두 출력하라.
+//		the - 1xxx
+
+//--------
+int main()
+//--------
+{
+	save("메인.cpp");
+
+	ifstream in{ "이상한 나라의 앨리스.txt" };
+	if (not in) {
+		cout << "파일?" << endl;
+		return 20250527;
+	}
+
+	map<STRING, size_t> wordNum;
+
+	STRING 단어;
+	while (in >> 단어)
+		wordNum[단어]++;
+	
+	vector<pair<STRING, size_t>> 정렬된목록{ wordNum.begin(), wordNum.end() };
+	sort(정렬된목록.begin(), 정렬된목록.end(),
+		[](const auto& a, const auto& b) {
+		return a.second > b.second; // 횟수 기준 내림차순
+	});
+
+	for (auto [단어, 개수] : 정렬된목록)
+		cout << 단어 << " - " << 개수 << endl;
+		//println("{:20} - {:}", 단어[0], 개수);
+} 
+
+======================================
+저장한 시간: 2025-06-05 오후 3:42:30 목요일
+======================================
+
+//---------------------------------------------------------------------------
+// 2025 STL 화56목78	 6월 5일 목요일							(13주 2일)
+// 6월 19일 목요일 15주 2일 - 기말시험
+//---------------------------------------------------------------------------
+// Associative Container - key와 연관된 value를 항상 정렬상태로 유지한다.
+//						   정렬은 key값을 기준으로 한다.
+//	set	/ mutiset	- key == value
+//  map	/ multimap	- pair<key, value>
+//---------------------------------------------------------------------------
+
+#include <iostream>
+#include <fstream>
+#include <algorithm>
+#include <format>
+#include <print>
+#include <map>
+#include "save.h"
+#include "STRING.h"
+using namespace std;
+
+extern bool 관찰;					// 관찰하려면 true로 설정
+
+// 강의자료 "이상한 나라의 앨리스.txt"를 다운받는다.
+// [1] 여기에 있는 모든 단어를 multiset<STRING>에 저장하라.
+// [2] 모두 몇 단어인지 화면에 출력하라.	- 26626
+// [3] 단어와 사용횟수를 화면에 출력하라.
+// [4] 가장 많이 사용된 단어부터 단어와 횟수를 모두 출력하라.
+//		the - 1xxx
+
+//--------
+int main()
+//--------
+{
+	save("메인.cpp");
+
+	ifstream in{ "이상한 나라의 앨리스.txt" };
+	if (not in) {
+		cout << "파일?" << endl;
+		return 20250527;
+	}
+
+	map<STRING, size_t> wordNum;
+
+	STRING 단어;
+	while (in >> 단어)
+		wordNum[단어]++;
+
+	for (auto [단어, 개수] : wordNum)
+		cout << 단어 << " - " << 개수 << endl;
+		//println("{:20} - {:}", 단어[0], 개수);'
+
+	map<size_t, STRING, less<size_t>> 개수와단어;
+
+	for (auto [단어, 개수] : wordNum)
+		개수와단어[개수] = 단어;
+
+	for (auto [개수, 단어] : 개수와단어)
+		cout << 단어 << " - " << 개수 << endl;
+
+} 
+
+======================================
+저장한 시간: 2025-06-05 오후 3:42:50 목요일
+======================================
+
+//---------------------------------------------------------------------------
+// 2025 STL 화56목78	 6월 5일 목요일							(13주 2일)
+// 6월 19일 목요일 15주 2일 - 기말시험
+//---------------------------------------------------------------------------
+// Associative Container - key와 연관된 value를 항상 정렬상태로 유지한다.
+//						   정렬은 key값을 기준으로 한다.
+//	set	/ mutiset	- key == value
+//  map	/ multimap	- pair<key, value>
+//---------------------------------------------------------------------------
+
+#include <iostream>
+#include <fstream>
+#include <algorithm>
+#include <format>
+#include <print>
+#include <map>
+#include "save.h"
+#include "STRING.h"
+using namespace std;
+
+extern bool 관찰;					// 관찰하려면 true로 설정
+
+// 강의자료 "이상한 나라의 앨리스.txt"를 다운받는다.
+// [1] 여기에 있는 모든 단어를 multiset<STRING>에 저장하라.
+// [2] 모두 몇 단어인지 화면에 출력하라.	- 26626
+// [3] 단어와 사용횟수를 화면에 출력하라.
+// [4] 가장 많이 사용된 단어부터 단어와 횟수를 모두 출력하라.
+//		the - 1xxx
+
+//--------
+int main()
+//--------
+{
+	save("메인.cpp");
+
+	ifstream in{ "이상한 나라의 앨리스.txt" };
+	if (not in) {
+		cout << "파일?" << endl;
+		return 20250527;
+	}
+
+	map<STRING, size_t> wordNum;
+
+	STRING 단어;
+	while (in >> 단어)
+		wordNum[단어]++;
+
+	for (auto [단어, 개수] : wordNum)
+		cout << 단어 << " - " << 개수 << endl;
+		//println("{:20} - {:}", 단어[0], 개수);'
+
+	map<size_t, STRING, greater<size_t>> 개수와단어;
+
+	for (auto [단어, 개수] : wordNum)
+		개수와단어[개수] = 단어;
+
+	for (auto [개수, 단어] : 개수와단어)
+		cout << 단어 << " - " << 개수 << endl;
+
+} 
+
+======================================
+저장한 시간: 2025-06-05 오후 3:43:13 목요일
+======================================
+
+//---------------------------------------------------------------------------
+// 2025 STL 화56목78	 6월 5일 목요일							(13주 2일)
+// 6월 19일 목요일 15주 2일 - 기말시험
+//---------------------------------------------------------------------------
+// Associative Container - key와 연관된 value를 항상 정렬상태로 유지한다.
+//						   정렬은 key값을 기준으로 한다.
+//	set	/ mutiset	- key == value
+//  map	/ multimap	- pair<key, value>
+//---------------------------------------------------------------------------
+
+#include <iostream>
+#include <fstream>
+#include <algorithm>
+#include <format>
+#include <print>
+#include <map>
+#include "save.h"
+#include "STRING.h"
+using namespace std;
+
+extern bool 관찰;					// 관찰하려면 true로 설정
+
+// 강의자료 "이상한 나라의 앨리스.txt"를 다운받는다.
+// [1] 여기에 있는 모든 단어를 multiset<STRING>에 저장하라.
+// [2] 모두 몇 단어인지 화면에 출력하라.	- 26626
+// [3] 단어와 사용횟수를 화면에 출력하라.
+// [4] 가장 많이 사용된 단어부터 단어와 횟수를 모두 출력하라.
+//		the - 1xxx
+
+//--------
+int main()
+//--------
+{
+	save("메인.cpp");
+
+	ifstream in{ "이상한 나라의 앨리스.txt" };
+	if (not in) {
+		cout << "파일?" << endl;
+		return 20250527;
+	}
+
+	map<STRING, size_t> wordNum;
+
+	STRING 단어;
+	while (in >> 단어)
+		wordNum[단어]++;
+
+	map<size_t, STRING, greater<size_t>> 개수와단어;
+
+	for (auto [단어, 개수] : wordNum)
+		개수와단어[개수] = 단어;
+
+	for (auto [개수, 단어] : 개수와단어)
+		cout << 단어 << " - " << 개수 << endl;
+
+} 
+
+======================================
+저장한 시간: 2025-06-05 오후 3:49:09 목요일
+======================================
+
+//---------------------------------------------------------------------------
+// 2025 STL 화56목78	 6월 5일 목요일							(13주 2일)
+// 6월 19일 목요일 15주 2일 - 기말시험
+//---------------------------------------------------------------------------
+// Associative Container - key와 연관된 value를 항상 정렬상태로 유지한다.
+//						   정렬은 key값을 기준으로 한다.
+//	set	/ mutiset	- key == value
+//  map	/ multimap	- pair<key, value>
+//---------------------------------------------------------------------------
+
+#include <iostream>
+#include <fstream>
+#include <algorithm>
+#include <format>
+#include <print>
+#include <map>
+#include "save.h"
+#include "STRING.h"
+using namespace std;
+
+extern bool 관찰;					// 관찰하려면 true로 설정
+
+// 강의자료 "이상한 나라의 앨리스.txt"를 다운받는다.
+// [1] 여기에 있는 모든 단어를 multiset<STRING>에 저장하라.
+// [2] 모두 몇 단어인지 화면에 출력하라.	- 26626
+// [3] 단어와 사용횟수를 화면에 출력하라.
+// [4] 가장 많이 사용된 단어부터 단어와 횟수를 모두 출력하라.
+//		the - 1xxx
+
+//--------
+int main()
+//--------
+{
+	save("메인.cpp");
+
+	ifstream in{ "이상한 나라의 앨리스.txt" };
+	if (not in) {
+		cout << "파일?" << endl;
+		return 20250527;
+	}
+
+	map<STRING, size_t> wordNum;
+
+	STRING 단어;
+	while (in >> 단어)
+		wordNum[단어]++;
+
+	multimap<size_t, STRING, greater<size_t>> 개수와단어;
+
+	for (auto [단어, 개수] : wordNum)
+		// 개수와단어.insert(pair<size_t, STRING>{개수, 단어});
+		개수와단어.insert(make_pair(개수, 단어));
+		//개수와단어[개수] = 단어;
+
+	for (auto [개수, 단어] : 개수와단어)
+		cout << 단어 << " - " << 개수 << endl;
+
+} 
+
+======================================
+저장한 시간: 2025-06-05 오후 4:01:45 목요일
+======================================
+
+//---------------------------------------------------------------------------
+// 2025 STL 화56목78	 6월 5일 목요일							(13주 2일)
+// 6월 19일 목요일 15주 2일 - 기말시험
+//---------------------------------------------------------------------------
+// Associative Container - key와 연관된 value를 항상 정렬상태로 유지한다.
+//						   정렬은 key값을 기준으로 한다.
+//	set	/ mutiset	- key == value
+//  map	/ multimap	- pair<key, value>
+//---------------------------------------------------------------------------
+
+#include <iostream>
+#include <random>
+#include <array>
+#include <map>
+#include "save.h"
+#include "STRING.h"
+using namespace std;
+
+extern bool 관찰;					// 관찰하려면 true로 설정
+
+// [문제] uniform 분포는 uniform 한가?
+// 전체 데이터를 20개의 구간으로 나누어 개수를 세서 화면출력하자.
+
+default_random_engine dre;
+uniform_int_distribution uid{ 0, 199'9999 };
+
+array<int, 2000'0000> a;
+
+//--------
+int main()
+//--------
+{
+	for (int& num : a)
+		num = uid(dre);
+
+	map<int, size_t> 구간과개수;
+
+	for (int num : a) {
+		int 구간 = num / 100'000;  // 0 ~ 19
+		구간과개수[구간]++;
+	}
+
+	for (auto [구간, 개수] : 구간과개수)
+		cout << 구간 + 1 << " - " << 개수 << endl;
+
+	save("메인.cpp");
+} 
+
+======================================
+저장한 시간: 2025-06-05 오후 4:07:46 목요일
+======================================
+
+//---------------------------------------------------------------------------
+// 2025 STL 화56목78	 6월 5일 목요일							(13주 2일)
+// 6월 19일 목요일 15주 2일 - 기말시험
+//---------------------------------------------------------------------------
+// Associative Container - key와 연관된 value를 항상 정렬상태로 유지한다.
+//						   정렬은 key값을 기준으로 한다.
+//	set	/ mutiset	- key == value
+//  map	/ multimap	- pair<key, value>
+//---------------------------------------------------------------------------
+
+#include <iostream>
+#include <random>
+#include <array>
+#include <map>
+#include "save.h"
+#include "STRING.h"
+using namespace std;
+
+extern bool 관찰;					// 관찰하려면 true로 설정
+
+// [문제] uniform 분포는 uniform 한가?
+// 전체 데이터를 20개의 구간으로 나누어 개수를 세서 화면출력하자.
+
+default_random_engine dre;
+uniform_int_distribution uid{ 0, 199'9999 };
+
+array<int, 2000'0000> a;
+
+//--------
+int main()
+//--------
+{
+	for (int& num : a)
+		num = uid(dre);
+
+	map<int, size_t> 구간과개수;
+
+	for (int num : a) {
+		구간과개수[num/100'0000]++;
+	}
+
+	for (auto [구간, 개수] : 구간과개수)
+		cout << 구간 + 1 << " - " << 개수 << endl;
+
+	save("메인.cpp");
+} 
+
+======================================
+저장한 시간: 2025-06-05 오후 4:08:09 목요일
+======================================
+
+//---------------------------------------------------------------------------
+// 2025 STL 화56목78	 6월 5일 목요일							(13주 2일)
+// 6월 19일 목요일 15주 2일 - 기말시험
+//---------------------------------------------------------------------------
+// Associative Container - key와 연관된 value를 항상 정렬상태로 유지한다.
+//						   정렬은 key값을 기준으로 한다.
+//	set	/ mutiset	- key == value
+//  map	/ multimap	- pair<key, value>
+//---------------------------------------------------------------------------
+
+#include <iostream>
+#include <random>
+#include <array>
+#include <map>
+#include "save.h"
+#include "STRING.h"
+using namespace std;
+
+extern bool 관찰;					// 관찰하려면 true로 설정
+
+// [문제] uniform 분포는 uniform 한가?
+// 전체 데이터를 20개의 구간으로 나누어 개수를 세서 화면출력하자.
+
+default_random_engine dre;
+uniform_int_distribution uid{ 0, 199'9999 };
+
+array<int, 2000'0000> a;
+
+//--------
+int main()
+//--------
+{
+	for (int& num : a)
+		num = uid(dre);
+
+	map<int, size_t> 구간과개수;
+
+	for (int num : a) 
+		구간과개수[num / 100'000]++;
+
+	for (auto [구간, 개수] : 구간과개수)
+		cout << 구간 + 1 << " - " << 개수 << endl;
+
+	save("메인.cpp");
+} 
+
+======================================
+저장한 시간: 2025-06-05 오후 4:13:00 목요일
+======================================
+
+//---------------------------------------------------------------------------
+// 2025 STL 화56목78	 6월 5일 목요일							(13주 2일)
+// 6월 19일 목요일 15주 2일 - 기말시험
+//---------------------------------------------------------------------------
+// Associative Container - key와 연관된 value를 항상 정렬상태로 유지한다.
+//						   정렬은 key값을 기준으로 한다.
+//	set	/ mutiset	- key == value
+//  map	/ multimap	- pair<key, value>
+//---------------------------------------------------------------------------
+
+#include <iostream>
+#include <random>
+#include <array>
+#include <map>
+#include "save.h"
+#include "STRING.h"
+using namespace std;
+
+extern bool 관찰;					// 관찰하려면 true로 설정
+
+// [문제] uniform 분포는 uniform 한가?
+// 전체 데이터를 20개의 구간으로 나누어 개수를 세서 화면출력하자.
+
+default_random_engine dre;		// 19937
+normal_distribution nd;
+
+array<int, 2000'0000> a;
+
+//--------
+int main()
+//--------
+{
+	for (int i = 0; i < 20; ++i)
+		cout << nd(dre) << endl;
+
+	/*for (int& num : a)
+		num = uid(dre);
+
+	map<int, size_t> 구간과개수;
+
+	for (int num : a) 
+		구간과개수[num / 100'000]++;
+
+	for (auto [구간, 개수] : 구간과개수)
+		cout << 구간 + 1 << " - " << 개수 << endl;*/
+
+	save("메인.cpp");
+} 
+
+======================================
+저장한 시간: 2025-06-05 오후 4:23:11 목요일
+======================================
+
+//---------------------------------------------------------------------------
+// 2025 STL 화56목78	 6월 5일 목요일							(13주 2일)
+// 6월 19일 목요일 15주 2일 - 기말시험
+//---------------------------------------------------------------------------
+// Associative Container - key와 연관된 value를 항상 정렬상태로 유지한다.
+//						   정렬은 key값을 기준으로 한다.
+//	set	/ mutiset	- key == value
+//  map	/ multimap	- pair<key, value>
+//---------------------------------------------------------------------------
+
+#include <iostream>
+#include <random>
+#include <array>
+#include <map>
+#include "save.h"
+#include "STRING.h"
+using namespace std;
+
+extern bool 관찰;					// 관찰하려면 true로 설정
+
+// [문제] uniform 분포는 uniform 한가?
+// 전체 데이터를 20개의 구간으로 나누어 개수를 세서 화면출력하자.
+
+default_random_engine dre;		// 19937
+normal_distribution nd{ 0.0, 3.0 };
+
+array<int, 2000'0000> a;
+
+//--------
+int main()
+//--------
+{
+
+	for (int& num : a) {
+		double d = nd(dre);
+		d *= 30'0000;
+		d += 100'0000;
+		if ((0 < d) and (d < 200'0000))
+			num = (int)d;
+	}
+
+	map<int, size_t> 구간과개수;
+
+	for (int num : a) 
+		구간과개수[num / 100'000]++;
+
+	for (auto [구간, 개수] : 구간과개수)
+		cout << 구간 + 1 << " - " << 개수 << endl;
+
+	save("메인.cpp");
+} 
+
+======================================
+저장한 시간: 2025-06-05 오후 4:23:29 목요일
+======================================
+
+//---------------------------------------------------------------------------
+// 2025 STL 화56목78	 6월 5일 목요일							(13주 2일)
+// 6월 19일 목요일 15주 2일 - 기말시험
+//---------------------------------------------------------------------------
+// Associative Container - key와 연관된 value를 항상 정렬상태로 유지한다.
+//						   정렬은 key값을 기준으로 한다.
+//	set	/ mutiset	- key == value
+//  map	/ multimap	- pair<key, value>
+//---------------------------------------------------------------------------
+
+#include <iostream>
+#include <random>
+#include <array>
+#include <map>
+#include "save.h"
+#include "STRING.h"
+using namespace std;
+
+extern bool 관찰;					// 관찰하려면 true로 설정
+
+// [문제] uniform 분포는 uniform 한가?
+// 전체 데이터를 20개의 구간으로 나누어 개수를 세서 화면출력하자.
+
+default_random_engine dre;		// 19937
+normal_distribution nd{ 0.0, 3.0 };
+
+array<int, 2000'0000> a;
+
+//--------
+int main()
+//--------
+{
+
+	for (int& num : a) {
+		double d = nd(dre);
+		d *= 3'0000;
+		d += 100'0000;
+		if ((0 < d) and (d < 200'0000))
+			num = (int)d;
+	}
+
+	map<int, size_t> 구간과개수;
+
+	for (int num : a) 
+		구간과개수[num / 100'000]++;
+
+	for (auto [구간, 개수] : 구간과개수)
+		cout << 구간 + 1 << " - " << 개수 << endl;
+
+	save("메인.cpp");
+} 
+
+======================================
+저장한 시간: 2025-06-05 오후 4:24:21 목요일
+======================================
+
+//---------------------------------------------------------------------------
+// 2025 STL 화56목78	 6월 5일 목요일							(13주 2일)
+// 6월 19일 목요일 15주 2일 - 기말시험
+//---------------------------------------------------------------------------
+// Associative Container - key와 연관된 value를 항상 정렬상태로 유지한다.
+//						   정렬은 key값을 기준으로 한다.
+//	set	/ mutiset	- key == value
+//  map	/ multimap	- pair<key, value>
+//---------------------------------------------------------------------------
+
+#include <iostream>
+#include <random>
+#include <array>
+#include <map>
+#include "save.h"
+#include "STRING.h"
+using namespace std;
+
+extern bool 관찰;					// 관찰하려면 true로 설정
+
+// [문제] uniform 분포는 uniform 한가?
+// 전체 데이터를 20개의 구간으로 나누어 개수를 세서 화면출력하자.
+
+default_random_engine dre;		// 19937
+normal_distribution nd{ 0.0, 1.0 };
+
+array<int, 2000'0000> a;
+
+//--------
+int main()
+//--------
+{
+
+	for (int& num : a) {
+		double d = nd(dre);
+		d *= 3'0000;
+		d += 100'0000;
+		if ((0 < d) and (d < 200'0000))
+			num = (int)d;
+	}
+
+	map<int, size_t> 구간과개수;
+
+	for (int num : a) 
+		구간과개수[num / 100'000]++;
+
+	for (auto [구간, 개수] : 구간과개수)
+		cout << 구간 + 1 << " - " << 개수 << endl;
+
+	save("메인.cpp");
+} 
+
+======================================
+저장한 시간: 2025-06-05 오후 4:24:40 목요일
+======================================
+
+//---------------------------------------------------------------------------
+// 2025 STL 화56목78	 6월 5일 목요일							(13주 2일)
+// 6월 19일 목요일 15주 2일 - 기말시험
+//---------------------------------------------------------------------------
+// Associative Container - key와 연관된 value를 항상 정렬상태로 유지한다.
+//						   정렬은 key값을 기준으로 한다.
+//	set	/ mutiset	- key == value
+//  map	/ multimap	- pair<key, value>
+//---------------------------------------------------------------------------
+
+#include <iostream>
+#include <random>
+#include <array>
+#include <map>
+#include "save.h"
+#include "STRING.h"
+using namespace std;
+
+extern bool 관찰;					// 관찰하려면 true로 설정
+
+// [문제] uniform 분포는 uniform 한가?
+// 전체 데이터를 20개의 구간으로 나누어 개수를 세서 화면출력하자.
+
+default_random_engine dre;		// 19937
+normal_distribution nd{ 0.0, 0.0 };
+
+array<int, 2000'0000> a;
+
+//--------
+int main()
+//--------
+{
+
+	for (int& num : a) {
+		double d = nd(dre);
+		d *= 3'0000;
+		d += 100'0000;
+		if ((0 < d) and (d < 200'0000))
+			num = (int)d;
+	}
+
+	map<int, size_t> 구간과개수;
+
+	for (int num : a) 
+		구간과개수[num / 100'000]++;
+
+	for (auto [구간, 개수] : 구간과개수)
+		cout << 구간 + 1 << " - " << 개수 << endl;
+
+	save("메인.cpp");
+} 
+
+======================================
+저장한 시간: 2025-06-05 오후 4:25:17 목요일
+======================================
+
+//---------------------------------------------------------------------------
+// 2025 STL 화56목78	 6월 5일 목요일							(13주 2일)
+// 6월 19일 목요일 15주 2일 - 기말시험
+//---------------------------------------------------------------------------
+// Associative Container - key와 연관된 value를 항상 정렬상태로 유지한다.
+//						   정렬은 key값을 기준으로 한다.
+//	set	/ mutiset	- key == value
+//  map	/ multimap	- pair<key, value>
+//---------------------------------------------------------------------------
+
+#include <iostream>
+#include <random>
+#include <array>
+#include <map>
+#include "save.h"
+#include "STRING.h"
+using namespace std;
+
+extern bool 관찰;					// 관찰하려면 true로 설정
+
+// [문제] uniform 분포는 uniform 한가?
+// 전체 데이터를 20개의 구간으로 나누어 개수를 세서 화면출력하자.
+
+default_random_engine dre;		// 19937
+normal_distribution nd{ 0.0, 0.5 };
+
+array<int, 2000'0000> a;
+
+//--------
+int main()
+//--------
+{
+
+	for (int& num : a) {
+		double d = nd(dre);
+		d *= 3'0000;
+		d += 100'0000;
+		if ((0 < d) and (d < 200'0000))
+			num = (int)d;
+	}
+
+	map<int, size_t> 구간과개수;
+
+	for (int num : a) 
+		구간과개수[num / 100'000]++;
+
+	for (auto [구간, 개수] : 구간과개수)
+		cout << 구간 + 1 << " - " << 개수 << endl;
+
+	save("메인.cpp");
+} 
+
+======================================
+저장한 시간: 2025-06-05 오후 4:59:47 목요일
+======================================
+
+//---------------------------------------------------------------------------
+// 2025 STL 화56목78	 6월 5일 목요일							(13주 2일)
+// 6월 19일 목요일 15주 2일 - 기말시험
+//---------------------------------------------------------------------------
+// Unordered Associative Containers - hash 구조
+//---------------------------------------------------------------------------
+
+#include <iostream>
+#include <unordered_set>	
+#include "save.h"
+#include "STRING.h"
+using namespace std;
+
+extern bool 관찰;					// 관찰하려면 true로 설정
+
+template <>
+struct std::hash<STRING> {
+	size_t operator()(const STRING& s) const  {
+		return hash<std::string> {}(string{ s.begin(), s.end() });
+	}
+};
+
+//--------
+int main()
+//--------
+{
+	unordered_set<STRING, hash<STRING>> us{ "1", "22", "333", "4444" };
+	
+	for (const STRING& s : us)
+		cout << s << endl;
+
+	save("메인.cpp");
+} 
+
+======================================
+저장한 시간: 2025-06-05 오후 5:03:25 목요일
+======================================
+
+//---------------------------------------------------------------------------
+// 2025 STL 화56목78	 6월 5일 목요일							(13주 2일)
+// 6월 19일 목요일 15주 2일 - 기말시험
+//---------------------------------------------------------------------------
+// Unordered Associative Containers - hash 구조
+//---------------------------------------------------------------------------
+
+#include <iostream>
+#include <unordered_set>	
+#include <print>
+#include "save.h"
+#include "STRING.h"
+using namespace std;
+
+extern bool 관찰;					// 관찰하려면 true로 설정
+
+template <>
+struct std::hash<STRING> {
+	size_t operator()(const STRING& s) const  {
+		return hash<std::string> {}(string{ s.begin(), s.end() });
+	}
+};
+
+//--------
+int main()
+//--------
+{
+	unordered_set<STRING, hash<STRING>> us{ "1", "22", "333", "4444" };
+	
+	for (const STRING& s : us)
+		cout << s << endl;
+
+	// 언오더드셋의 메모리를 화면에 출력한다.
+	for (size_t bc = 0; bc < us.bucket_count(); ++bc) {
+		print("[{:3}] ", bc);
+
+		cout << endl;
+	}
+
+	save("메인.cpp");
+} 
+
+======================================
+저장한 시간: 2025-06-05 오후 5:06:26 목요일
+======================================
+
+//---------------------------------------------------------------------------
+// 2025 STL 화56목78	 6월 5일 목요일							(13주 2일)
+// 6월 19일 목요일 15주 2일 - 기말시험
+//---------------------------------------------------------------------------
+// Unordered Associative Containers - hash 구조
+//---------------------------------------------------------------------------
+
+#include <iostream>
+#include <unordered_set>	
+#include <print>
+#include "save.h"
+#include "STRING.h"
+using namespace std;
+
+extern bool 관찰;					// 관찰하려면 true로 설정
+
+template <>
+struct std::hash<STRING> {
+	size_t operator()(const STRING& s) const  {
+		return hash<std::string> {}(string{ s.begin(), s.end() });
+	}
+};
+
+//--------
+int main()
+//--------
+{
+	unordered_set<STRING, hash<STRING>> us{ "1", "22", "333", "4444" };
+	
+	for (const STRING& s : us)
+		cout << s << endl;
+
+	// 언오더드셋의 메모리를 화면에 출력한다.
+	for (size_t bc = 0; bc < us.bucket_count(); ++bc) {
+		print("[{:3}] ", bc);
+		for (auto i = us.begin(bc); i != us.end(bc); ++i) {
+			print(" -> {:}", std::string(i->begin(), i->end()));
+		}
+
+		cout << endl;
+	}
+
+	save("메인.cpp");
+} 
+
+======================================
+저장한 시간: 2025-06-05 오후 5:08:16 목요일
+======================================
+
+//---------------------------------------------------------------------------
+// 2025 STL 화56목78	 6월 5일 목요일							(13주 2일)
+// 6월 19일 목요일 15주 2일 - 기말시험
+//---------------------------------------------------------------------------
+// Unordered Associative Containers - hash 구조
+//---------------------------------------------------------------------------
+
+#include <iostream>
+#include <unordered_set>	
+#include <print>
+#include "save.h"
+#include "STRING.h"
+using namespace std;
+
+extern bool 관찰;					// 관찰하려면 true로 설정
+
+template <>
+struct std::hash<STRING> {
+	size_t operator()(const STRING& s) const  {
+		return hash<std::string> {}(string{ s.begin(), s.end() });
+	}
+};
+
+//--------
+int main()
+//--------
+{
+	save("메인.cpp");
+
+	unordered_set<STRING, hash<STRING>> us{ "1", "22", "333", "4444" };
+	
+	for (const STRING& s : us)
+		cout << s << endl;
+
+	// 언오더드셋의 메모리를 화면에 출력한다.
+
+	while(true){
+		for (size_t bc = 0; bc < us.bucket_count(); ++bc) {
+			print("[{:3}] ", bc);
+			for (auto i = us.begin(bc); i != us.end(bc); ++i) {
+				print(" -> {:}", std::string(i->begin(), i->end()));
+			}
+
+			cout << endl;
+		}
+		cout << "추가할 STRING - ";
+		STRING s;
+		cin >> s;
+
+		us.insert(s);
+	}
+} 
