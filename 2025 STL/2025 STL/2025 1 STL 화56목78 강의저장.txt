@@ -14143,3 +14143,2190 @@ int main()
 
 	save("메인.cpp");
 } 
+
+======================================
+저장한 시간: 2025-06-12 오후 3:37:34 목요일
+======================================
+
+//---------------------------------------------------------------------------
+// 2025 STL 화56목78	 6월 12일 목요일							(14주 2일)
+// 6월 19일 목요일 15주 2일 - 기말시험, E320에서...
+//---------------------------------------------------------------------------
+// Algorithms - cppreference
+//---------------------------------------------------------------------------
+
+#include <iostream>
+#include <algorithm>
+#include <thread>
+#include <chrono>
+#include <print>
+#include "save.h"
+#include "STRING.h"
+using namespace std;
+
+extern bool 관찰;					// 관찰하려면 true로 설정
+
+//--------
+int main()
+//--------
+{
+	save("메인.cpp");
+
+	// 다음 시간에 sorting 관련 알고리즘 이해
+	string s{ "C++ Standard Template Library - 2025. 6. 12" };
+
+	for (int i = 0; i < 12; ++i)
+		cout << endl;
+
+	// 이것도 살리고.
+	while (true) {
+		print("{:^80}'\r'", s);
+		this_thread::sleep_for(100ms);		// 100ms 쉬고
+		rotate(s.begin(), s.begin() + 1, s.end());
+	}
+} 
+
+======================================
+저장한 시간: 2025-06-12 오후 3:38:28 목요일
+======================================
+
+//---------------------------------------------------------------------------
+// 2025 STL 화56목78	 6월 12일 목요일							(14주 2일)
+// 6월 19일 목요일 15주 2일 - 기말시험, E320에서...
+//---------------------------------------------------------------------------
+// Algorithms - cppreference
+//---------------------------------------------------------------------------
+
+#include <iostream>
+#include <algorithm>
+#include <thread>
+#include <chrono>
+#include <print>
+#include "save.h"
+#include "STRING.h"
+using namespace std;
+
+extern bool 관찰;					// 관찰하려면 true로 설정
+
+//--------
+int main()
+//--------
+{
+	save("메인.cpp");
+
+	// 다음 시간에 sorting 관련 알고리즘 이해
+	string s{ "C++ Standard Template Library - 2025. 6. 12" };
+
+	for (int i = 0; i < 12; ++i)
+		cout << endl;
+
+	// 이것도 살리고.
+	while (true) {
+		print("{:^80}'\r'", s);
+		this_thread::sleep_for(100ms);		// 100ms 쉬고
+		rotate(s.begin(), s.end() - 1, s.end());
+	}
+} 
+
+======================================
+저장한 시간: 2025-06-12 오후 3:38:56 목요일
+======================================
+
+//---------------------------------------------------------------------------
+// 2025 STL 화56목78	 6월 12일 목요일							(14주 2일)
+// 6월 19일 목요일 15주 2일 - 기말시험, E320에서...
+//---------------------------------------------------------------------------
+// Algorithms - cppreference
+//---------------------------------------------------------------------------
+
+#include <iostream>
+#include <algorithm>
+#include <thread>
+#include <chrono>
+#include <print>
+#include "save.h"
+#include "STRING.h"
+using namespace std;
+
+extern bool 관찰;					// 관찰하려면 true로 설정
+
+//--------
+int main()
+//--------
+{
+	save("메인.cpp");
+
+	// 다음 시간에 sorting 관련 알고리즘 이해
+	string s{ "C++ Standard Template Library - 2025. 6. 12" };
+
+	for (int i = 0; i < 12; ++i)
+		cout << endl;
+
+	// 이것도 살리고.
+	while (true) {
+		print("{:^80}'\r'", s);
+		this_thread::sleep_for(10ms);		// 100ms 쉬고
+		rotate(s.begin(), s.end() - 1, s.end());
+	}
+} 
+
+======================================
+저장한 시간: 2025-06-12 오후 3:39:23 목요일
+======================================
+
+//---------------------------------------------------------------------------
+// 2025 STL 화56목78	 6월 12일 목요일							(14주 2일)
+// 6월 19일 목요일 15주 2일 - 기말시험, E320에서...
+//---------------------------------------------------------------------------
+// Algorithms - cppreference
+//---------------------------------------------------------------------------
+
+#include <iostream>
+#include <algorithm>
+#include <thread>
+#include <chrono>
+#include <print>
+#include "save.h"
+#include "STRING.h"
+using namespace std;
+
+extern bool 관찰;					// 관찰하려면 true로 설정
+
+//--------
+int main()
+//--------
+{
+	save("메인.cpp");
+
+	// 다음 시간에 sorting 관련 알고리즘 이해
+	string s{ "C++ Standard Template Library - 2025. 6. 12" };
+
+	for (int i = 0; i < 12; ++i)
+		cout << endl;
+
+	// 이것도 살리고.
+	while (true) {
+		print("{:^80}'\r'", s);
+		this_thread::sleep_for(33ms);		// 100ms 쉬고
+		rotate(s.begin(), s.end() - 1, s.end());
+	}
+} 
+
+======================================
+저장한 시간: 2025-06-12 오후 3:40:51 목요일
+======================================
+
+//---------------------------------------------------------------------------
+// 2025 STL 화56목78	 6월 12일 목요일							(14주 2일)
+// 6월 19일 목요일 15주 2일 - 기말시험, E320에서...
+//---------------------------------------------------------------------------
+// Algorithms - cppreference
+//---------------------------------------------------------------------------
+
+#include <iostream>
+#include <algorithm>
+#include <thread>
+#include <chrono>
+#include <print>
+#include "save.h"
+#include "STRING.h"
+using namespace std;
+
+extern bool 관찰;					// 관찰하려면 true로 설정
+
+//--------
+int main()
+//--------
+{
+	save("메인.cpp");
+
+	// 다음 시간에 sorting 관련 알고리즘 이해
+	string s{ "C++ Standard Template Library - 2025. 6. 12" };
+
+	for (int i = 0; i < 12; ++i)
+		cout << endl;
+
+	// 이것도 살리고.
+	while (true) {
+		print("{:^80}'\r'", s);
+		this_thread::sleep_for(33ms);		// 100ms 쉬고
+		shift_left(s.begin(), s.end(), 1);
+	}
+} 
+
+======================================
+저장한 시간: 2025-06-12 오후 3:41:07 목요일
+======================================
+
+//---------------------------------------------------------------------------
+// 2025 STL 화56목78	 6월 12일 목요일							(14주 2일)
+// 6월 19일 목요일 15주 2일 - 기말시험, E320에서...
+//---------------------------------------------------------------------------
+// Algorithms - cppreference
+//---------------------------------------------------------------------------
+
+#include <iostream>
+#include <algorithm>
+#include <thread>
+#include <chrono>
+#include <print>
+#include "save.h"
+#include "STRING.h"
+using namespace std;
+
+extern bool 관찰;					// 관찰하려면 true로 설정
+
+//--------
+int main()
+//--------
+{
+	save("메인.cpp");
+
+	// 다음 시간에 sorting 관련 알고리즘 이해
+	string s{ "C++ Standard Template Library - 2025. 6. 12" };
+
+	for (int i = 0; i < 12; ++i)
+		cout << endl;
+
+	// 이것도 살리고.
+	while (true) {
+		print("{:^80}'\r'", s);
+		this_thread::sleep_for(1s);		// 100ms 쉬고
+		shift_left(s.begin(), s.end(), 1);
+	}
+} 
+
+======================================
+저장한 시간: 2025-06-12 오후 3:56:31 목요일
+======================================
+
+//---------------------------------------------------------------------------
+// 2025 STL 화56목78	 6월 12일 목요일							(14주 2일)
+// 6월 19일 목요일 15주 2일 - 기말시험, E320에서...
+//---------------------------------------------------------------------------
+// 정렬관련 Algorithms을 알아본다 - 복잡도 순으로
+// 
+// aaaaaaaaaaaaaaabbbbbbbbbbcccccccccccc - O(N)
+// 
+// 1. partition
+// 2. nth_element
+// 3. partial_sort
+// 4. sort				- O(NlogN)
+// 5. stable_sort
+//---------------------------------------------------------------------------
+
+#include <iostream>
+#include <random>	
+#include <vector>
+#include <algorithm>
+#include <print>
+#include <numeric>
+#include "save.h"
+#include "STRING.h"
+using namespace std;
+
+extern bool 관찰;					// 관찰하려면 true로 설정
+
+default_random_engine dre{ random_device{}() };
+
+//--------
+int main()
+//--------
+{
+	vector<int> v(100);
+	iota(v.begin(), v.end(), 1);
+
+	{
+		cout << "홀수와 짝수로 분리" << endl;
+
+		shuffle(v.begin(), v.end(), dre);
+
+		cout << "partion 하기 전" << endl;
+		for (int num : v)
+			print("{:8}", num);
+		cout << endl;
+	}
+
+	save("메인.cpp");
+} 
+
+======================================
+저장한 시간: 2025-06-12 오후 3:58:04 목요일
+======================================
+
+//---------------------------------------------------------------------------
+// 2025 STL 화56목78	 6월 12일 목요일							(14주 2일)
+// 6월 19일 목요일 15주 2일 - 기말시험, E320에서...
+//---------------------------------------------------------------------------
+// 정렬관련 Algorithms을 알아본다 - 복잡도 순으로
+// 
+// aaaaaaaaaaaaaaabbbbbbbbbbcccccccccccc - O(N)
+// 
+// 1. partition
+// 2. nth_element
+// 3. partial_sort
+// 4. sort				- O(NlogN)
+// 5. stable_sort
+//---------------------------------------------------------------------------
+
+#include <iostream>
+#include <random>	
+#include <vector>
+#include <algorithm>
+#include <print>
+#include <numeric>
+#include "save.h"
+#include "STRING.h"
+using namespace std;
+
+extern bool 관찰;					// 관찰하려면 true로 설정
+
+default_random_engine dre{ random_device{}() };
+
+//--------
+int main()
+//--------
+{
+	vector<int> v(100);
+	iota(v.begin(), v.end(), 1);
+
+	{
+		cout << "홀수와 짝수로 분리" << endl;
+
+		shuffle(v.begin(), v.end(), dre);
+
+		cout << "partion 하기 전" << endl;
+		for (int num : v)
+			print("{:8}", num);
+		cout << endl;
+
+		cout << endl;
+		partition(v.begin(), v.end(), [](int num) {
+			return num & 1;
+		});
+
+		cout << "partion 한 후" << endl;
+		for (int num : v)
+			print("{:8}", num);
+		cout << endl;
+	}
+
+	save("메인.cpp");
+} 
+
+======================================
+저장한 시간: 2025-06-12 오후 4:01:17 목요일
+======================================
+
+//---------------------------------------------------------------------------
+// 2025 STL 화56목78	 6월 12일 목요일							(14주 2일)
+// 6월 19일 목요일 15주 2일 - 기말시험, E320에서...
+//---------------------------------------------------------------------------
+// 정렬관련 Algorithms을 알아본다 - 복잡도 순으로
+// 
+// aaaaaaaaaaaaaaabbbbbbbbbbcccccccccccc - O(N)
+// 
+// 1. partition
+// 2. nth_element
+// 3. partial_sort
+// 4. sort				- O(NlogN)
+// 5. stable_sort
+//---------------------------------------------------------------------------
+
+#include <iostream>
+#include <random>	
+#include <vector>
+#include <algorithm>
+#include <print>
+#include <numeric>
+#include "save.h"
+#include "STRING.h"
+using namespace std;
+
+extern bool 관찰;					// 관찰하려면 true로 설정
+
+default_random_engine dre{ random_device{}() };
+
+//--------
+int main()
+//--------
+{
+	vector<int> v(100);
+	iota(v.begin(), v.end(), 1);
+
+	{
+		cout << "홀수와 짝수로 분리" << endl;
+
+		shuffle(v.begin(), v.end(), dre);
+
+		cout << "partion 하기 전" << endl;
+		for (int num : v)
+			print("{:8}", num);
+		cout << endl;
+
+		cout << endl;
+		auto p = partition(v.begin(), v.end(), [](int num) {
+			return num & 1;
+		});
+
+		cout << "홀수" << endl;
+		for (auto i = v.begin(); i < p; ++i)
+			print("{:8}", *i);
+		cout << endl;
+
+		cout << "짝수" << endl;
+		for (auto i = p; i < v.end(); ++i)
+			print("{:8}", *i);
+		cout << endl;
+		cout << endl;
+	}
+
+	save("메인.cpp");
+} 
+
+======================================
+저장한 시간: 2025-06-12 오후 4:09:04 목요일
+======================================
+
+//---------------------------------------------------------------------------
+// 2025 STL 화56목78	 6월 12일 목요일							(14주 2일)
+// 6월 19일 목요일 15주 2일 - 기말시험, E320에서...
+//---------------------------------------------------------------------------
+// 정렬관련 Algorithms을 알아본다 - 복잡도 순으로
+// 
+// aaaaaaaaaaaaaaabbbbbbbbbbcccccccccccc - O(N)
+// 
+// 1. partition			- O(N)
+// 2. nth_element
+// 3. partial_sort
+// 4. sort				- O(NlogN)
+// 5. stable_sort
+//---------------------------------------------------------------------------
+
+#include <iostream>
+#include <random>	
+#include <vector>
+#include <algorithm>
+#include <print>
+#include <numeric>
+#include "save.h"
+#include "STRING.h"
+using namespace std;
+
+extern bool 관찰;					// 관찰하려면 true로 설정
+
+default_random_engine dre{ random_device{}() };
+
+//--------
+int main()
+//--------
+{
+	vector<int> v(100);
+	iota(v.begin(), v.end(), 1);
+
+	{
+		cout << "홀수와 짝수로 분리" << endl;
+
+		shuffle(v.begin(), v.end(), dre);
+
+		cout << "partion 하기 전" << endl;
+		for (int num : v)
+			print("{:8}", num);
+		cout << endl;
+
+		cout << endl;
+		auto p = partition(v.begin(), v.end(), [](int num) {
+			return num & 1;
+		});
+
+		cout << "홀수" << endl;
+		for (auto i = v.begin(); i < p; ++i)
+			print("{:8}", *i);
+		cout << endl;
+
+		cout << "짝수" << endl;
+		for (auto i = p; i < v.end(); ++i)
+			print("{:8}", *i);
+		cout << endl;
+		cout << endl;
+	}
+
+	{
+		cout << "10번쨰까지와 나머지를 분리" << endl;
+		// 홀수 번째까지 놔두고 그 뒤에는 짝수 홀수 상관 없음
+
+		shuffle(v.begin(), v.end(), dre);
+
+		cout << "nth_element 실행 전" << endl;
+		for (int num : v)
+			print("{:8}", num);
+		cout << endl;
+
+		cout << endl;
+		nth_element(v.begin(), v.begin() + 10, v.end());
+
+		cout << "앞에서부터 10개" << endl;
+		for (auto i = v.begin(); i < v.begin() + 10; ++i)
+			print("{:8}", *i);
+		cout << endl;
+
+		cout << "짝수" << endl;
+		for (auto i = v.begin() + 10; i < v.end(); ++i)
+			print("{:8}", *i);
+		cout << endl;
+		cout << endl;
+	}
+
+	save("메인.cpp");
+} 
+
+======================================
+저장한 시간: 2025-06-12 오후 4:09:14 목요일
+======================================
+
+//---------------------------------------------------------------------------
+// 2025 STL 화56목78	 6월 12일 목요일							(14주 2일)
+// 6월 19일 목요일 15주 2일 - 기말시험, E320에서...
+//---------------------------------------------------------------------------
+// 정렬관련 Algorithms을 알아본다 - 복잡도 순으로
+// 
+// aaaaaaaaaaaaaaabbbbbbbbbbcccccccccccc - O(N)
+// 
+// 1. partition			- O(N)
+// 2. nth_element
+// 3. partial_sort
+// 4. sort				- O(NlogN)
+// 5. stable_sort
+//---------------------------------------------------------------------------
+
+#include <iostream>
+#include <random>	
+#include <vector>
+#include <algorithm>
+#include <print>
+#include <numeric>
+#include "save.h"
+#include "STRING.h"
+using namespace std;
+
+extern bool 관찰;					// 관찰하려면 true로 설정
+
+default_random_engine dre{ random_device{}() };
+
+//--------
+int main()
+//--------
+{
+	vector<int> v(100);
+	iota(v.begin(), v.end(), 1);
+
+	{
+		cout << "홀수와 짝수로 분리" << endl;
+
+		shuffle(v.begin(), v.end(), dre);
+
+		cout << "partion 하기 전" << endl;
+		for (int num : v)
+			print("{:8}", num);
+		cout << endl;
+
+		cout << endl;
+		auto p = partition(v.begin(), v.end(), [](int num) {
+			return num & 1;
+		});
+
+		cout << "홀수" << endl;
+		for (auto i = v.begin(); i < p; ++i)
+			print("{:8}", *i);
+		cout << endl;
+
+		cout << "짝수" << endl;
+		for (auto i = p; i < v.end(); ++i)
+			print("{:8}", *i);
+		cout << endl;
+		cout << endl;
+	}
+
+	{
+		cout << "10번쨰까지와 나머지를 분리" << endl;
+		// 홀수 번째까지 놔두고 그 뒤에는 짝수 홀수 상관 없음
+
+		shuffle(v.begin(), v.end(), dre);
+
+		cout << "nth_element 실행 전" << endl;
+		for (int num : v)
+			print("{:8}", num);
+		cout << endl;
+
+		cout << endl;
+		nth_element(v.begin(), v.begin() + 10, v.end());
+
+		cout << "앞에서부터 10개" << endl;
+		for (auto i = v.begin(); i < v.begin() + 10; ++i)
+			print("{:8}", *i);
+		cout << endl;
+
+		cout << "나머지" << endl;
+		for (auto i = v.begin() + 10; i < v.end(); ++i)
+			print("{:8}", *i);
+		cout << endl;
+		cout << endl;
+	}
+
+	save("메인.cpp");
+} 
+
+======================================
+저장한 시간: 2025-06-12 오후 4:09:36 목요일
+======================================
+
+//---------------------------------------------------------------------------
+// 2025 STL 화56목78	 6월 12일 목요일							(14주 2일)
+// 6월 19일 목요일 15주 2일 - 기말시험, E320에서...
+//---------------------------------------------------------------------------
+// 정렬관련 Algorithms을 알아본다 - 복잡도 순으로
+// 
+// aaaaaaaaaaaaaaabbbbbbbbbbcccccccccccc - O(N)
+// 
+// 1. partition			- O(N)
+// 2. nth_element
+// 3. partial_sort
+// 4. sort				- O(NlogN)
+// 5. stable_sort
+//---------------------------------------------------------------------------
+
+#include <iostream>
+#include <random>	
+#include <vector>
+#include <algorithm>
+#include <print>
+#include <numeric>
+#include "save.h"
+#include "STRING.h"
+using namespace std;
+
+extern bool 관찰;					// 관찰하려면 true로 설정
+
+default_random_engine dre{ random_device{}() };
+
+//--------
+int main()
+//--------
+{
+	vector<int> v(100);
+	iota(v.begin(), v.end(), 1);
+
+	{
+		cout << "홀수와 짝수로 분리" << endl;
+
+		shuffle(v.begin(), v.end(), dre);
+
+		cout << "partion 하기 전" << endl;
+		for (int num : v)
+			print("{:8}", num);
+		cout << endl;
+
+		cout << endl;
+		auto p = partition(v.begin(), v.end(), [](int num) {
+			return num & 1;
+		});
+
+		cout << "홀수" << endl;
+		for (auto i = v.begin(); i < p; ++i)
+			print("{:8}", *i);
+		cout << endl;
+
+		cout << "짝수" << endl;
+		for (auto i = p; i < v.end(); ++i)
+			print("{:8}", *i);
+		cout << endl;
+		cout << endl;
+	}
+
+	{
+		cout << "10번쨰까지와 나머지를 분리" << endl;
+		// 홀수 번째까지 놔두고 그 뒤에는 짝수 홀수 상관 없음
+
+		shuffle(v.begin(), v.end(), dre);
+
+		cout << "nth_element 실행 전" << endl;
+		for (int num : v)
+			print("{:8}", num);
+		cout << endl;
+
+		cout << endl;
+		nth_element(v.begin(), v.begin() + 10, v.end());
+
+		cout << "앞에서부터 10개" << endl;
+		for (auto i = v.begin(); i < v.begin() + 10; ++i)
+			print("{:8}", *i);
+		cout << endl;
+
+		cout << "나머지" << endl;
+		for (auto i = v.begin() + 10; i < v.end(); ++i)
+			print("{:8}", *i);
+		cout << endl;
+		cout << endl;
+	}
+
+	save("메인.cpp");
+} 
+
+======================================
+저장한 시간: 2025-06-12 오후 4:10:24 목요일
+======================================
+
+//---------------------------------------------------------------------------
+// 2025 STL 화56목78	 6월 12일 목요일							(14주 2일)
+// 6월 19일 목요일 15주 2일 - 기말시험, E320에서...
+//---------------------------------------------------------------------------
+// 정렬관련 Algorithms을 알아본다 - 복잡도 순으로
+// 
+// aaaaaaaaaaaaaaabbbbbbbbbbcccccccccccc - O(N)
+// 
+// 1. partition			- O(N)
+// 2. nth_element
+// 3. partial_sort
+// 4. sort				- O(NlogN)
+// 5. stable_sort
+//---------------------------------------------------------------------------
+
+#include <iostream>
+#include <random>	
+#include <vector>
+#include <algorithm>
+#include <print>
+#include <numeric>
+#include "save.h"
+#include "STRING.h"
+using namespace std;
+
+extern bool 관찰;					// 관찰하려면 true로 설정
+
+default_random_engine dre{ random_device{}() };
+
+//--------
+int main()
+//--------
+{
+	vector<int> v(100);
+	iota(v.begin(), v.end(), 1);
+
+	{
+		cout << "홀수와 짝수로 분리" << endl;
+
+		shuffle(v.begin(), v.end(), dre);
+
+		cout << "partion 하기 전" << endl;
+		for (int num : v)
+			print("{:8}", num);
+		cout << endl;
+
+		cout << endl;
+		auto p = partition(v.begin(), v.end(), [](int num) {
+			return num & 1;
+		});
+
+		cout << "홀수" << endl;
+		for (auto i = v.begin(); i < p; ++i)
+			print("{:8}", *i);
+		cout << endl;
+
+		cout << "짝수" << endl;
+		for (auto i = p; i < v.end(); ++i)
+			print("{:8}", *i);
+		cout << endl;
+		cout << endl;
+	}
+
+	{
+		cout << "40번쨰까지와 나머지를 분리" << endl;
+		// 홀수 번째까지 놔두고 그 뒤에는 짝수 홀수 상관 없음
+
+		shuffle(v.begin(), v.end(), dre);
+
+		cout << "nth_element 실행 전" << endl;
+		for (int num : v)
+			print("{:8}", num);
+		cout << endl;
+
+		cout << endl;
+		nth_element(v.begin(), v.begin() + 40, v.end());
+
+		cout << "앞에서부터 40개" << endl;
+		for (auto i = v.begin(); i < v.begin() + 40; ++i)
+			print("{:8}", *i);
+		cout << endl;
+
+		cout << "나머지" << endl;
+		for (auto i = v.begin() + 40; i < v.end(); ++i)
+			print("{:8}", *i);
+		cout << endl;
+		cout << endl;
+	}
+
+	save("메인.cpp");
+} 
+
+======================================
+저장한 시간: 2025-06-12 오후 4:12:41 목요일
+======================================
+
+//---------------------------------------------------------------------------
+// 2025 STL 화56목78	 6월 12일 목요일							(14주 2일)
+// 6월 19일 목요일 15주 2일 - 기말시험, E320에서...
+//---------------------------------------------------------------------------
+// 정렬관련 Algorithms을 알아본다 - 복잡도 순으로
+// 
+// aaaaaaaaaaaaaaabbbbbbbbbbcccccccccccc - O(N)
+// 
+// 1. partition			- O(N)
+// 2. nth_element
+// 3. partial_sort
+// 4. sort				- O(NlogN)
+// 5. stable_sort
+//---------------------------------------------------------------------------
+
+#include <iostream>
+#include <random>	
+#include <vector>
+#include <algorithm>
+#include <print>
+#include <numeric>
+#include "save.h"
+#include "STRING.h"
+using namespace std;
+
+extern bool 관찰;					// 관찰하려면 true로 설정
+
+default_random_engine dre{ random_device{}() };
+
+//--------
+int main()
+//--------
+{
+	vector<int> v(100);
+	iota(v.begin(), v.end(), 1);
+
+	{
+		cout << "홀수와 짝수로 분리" << endl;
+
+		shuffle(v.begin(), v.end(), dre);
+
+		cout << "partion 하기 전" << endl;
+		for (int num : v)
+			print("{:8}", num);
+		cout << endl;
+
+		cout << endl;
+		auto p = partition(v.begin(), v.end(), [](int num) {
+			return num & 1;
+		});
+
+		cout << "홀수" << endl;
+		for (auto i = v.begin(); i < p; ++i)
+			print("{:8}", *i);
+		cout << endl;
+
+		cout << "짝수" << endl;
+		for (auto i = p; i < v.end(); ++i)
+			print("{:8}", *i);
+		cout << endl;
+		cout << endl;
+	}
+
+	{
+		cout << "40번쨰까지와 나머지를 분리" << endl;
+		// 홀수 번째까지 놔두고 그 뒤에는 짝수 홀수 상관 없음
+
+		shuffle(v.begin(), v.end(), dre);
+
+		cout << "nth_element 실행 전" << endl;
+		for (int num : v)
+			print("{:8}", num);
+		cout << endl;
+
+		cout << endl;
+		nth_element(v.begin(), v.begin() + 40, v.end());
+
+		cout << "앞에서부터 40개" << endl;
+		for (auto i = v.begin(); i < v.begin() + 40; ++i)
+			print("{:8}", *i);
+		cout << endl;
+
+		cout << "나머지" << endl;
+		for (auto i = v.begin() + 40; i < v.end(); ++i)
+			print("{:8}", *i);
+		cout << endl;
+		cout << endl;
+	}
+
+	{
+		cout << "40번째까지만 정렬" << endl;
+
+		shuffle(v.begin(), v.end(), dre);
+
+		cout << "partial_sort 실행 전" << endl;
+		for (int num : v)
+			print("{:8}", num);
+		cout << endl;
+
+		cout << endl;
+		partial_sort(v.begin(), v.begin() + 40, v.end());
+
+		cout << "앞에서부터 40개만 정렬" << endl;
+		for (auto i = v.begin(); i < v.begin() + 40; ++i)
+			print("{:8}", *i);
+		cout << endl;
+
+		cout << "나머지" << endl;
+		for (auto i = v.begin() + 40; i < v.end(); ++i)
+			print("{:8}", *i);
+		cout << endl;
+		cout << endl;
+	}
+
+	save("메인.cpp");
+} 
+
+======================================
+저장한 시간: 2025-06-12 오후 4:13:01 목요일
+======================================
+
+//---------------------------------------------------------------------------
+// 2025 STL 화56목78	 6월 12일 목요일							(14주 2일)
+// 6월 19일 목요일 15주 2일 - 기말시험, E320에서...
+//---------------------------------------------------------------------------
+// 정렬관련 Algorithms을 알아본다 - 복잡도 순으로
+// 
+// aaaaaaaaaaaaaaabbbbbbbbbbcccccccccccc - O(N)
+// 
+// 1. partition			- O(N)
+// 2. nth_element
+// 3. partial_sort
+// 4. sort				- O(NlogN)
+// 5. stable_sort
+//---------------------------------------------------------------------------
+
+#include <iostream>
+#include <random>	
+#include <vector>
+#include <algorithm>
+#include <print>
+#include <numeric>
+#include "save.h"
+#include "STRING.h"
+using namespace std;
+
+extern bool 관찰;					// 관찰하려면 true로 설정
+
+default_random_engine dre{ random_device{}() };
+
+//--------
+int main()
+//--------
+{
+	vector<int> v(100);
+	iota(v.begin(), v.end(), 1);
+
+	{
+		cout << "홀수와 짝수로 분리" << endl;
+
+		shuffle(v.begin(), v.end(), dre);
+
+		cout << "partion 하기 전" << endl;
+		for (int num : v)
+			print("{:8}", num);
+		cout << endl;
+
+		cout << endl;
+		auto p = partition(v.begin(), v.end(), [](int num) {
+			return num & 1;
+		});
+
+		cout << "홀수" << endl;
+		for (auto i = v.begin(); i < p; ++i)
+			print("{:8}", *i);
+		cout << endl;
+
+		cout << "짝수" << endl;
+		for (auto i = p; i < v.end(); ++i)
+			print("{:8}", *i);
+		cout << endl;
+		cout << endl;
+	}
+
+	{
+		cout << "40번쨰까지와 나머지를 분리" << endl;
+		// 홀수 번째까지 놔두고 그 뒤에는 짝수 홀수 상관 없음
+
+		shuffle(v.begin(), v.end(), dre);
+
+		cout << "nth_element 실행 전" << endl;
+		for (int num : v)
+			print("{:8}", num);
+		cout << endl;
+
+		cout << endl;
+		nth_element(v.begin(), v.begin() + 40, v.end());
+
+		cout << "앞에서부터 40개" << endl;
+		for (auto i = v.begin(); i < v.begin() + 40; ++i)
+			print("{:8}", *i);
+		cout << endl;
+
+		cout << "나머지" << endl;
+		for (auto i = v.begin() + 40; i < v.end(); ++i)
+			print("{:8}", *i);
+		cout << endl;
+		cout << endl;
+	}
+
+	{
+		cout << "40번째까지만 정렬" << endl;
+
+		shuffle(v.begin(), v.end(), dre);
+
+		cout << "partial_sort 실행 전" << endl;
+		for (int num : v)
+			print("{:8}", num);
+		cout << endl;
+
+		cout << endl;
+		partial_sort(v.begin(), v.begin() + 40, v.end());
+
+		cout << "앞에서부터 40개만 정렬" << endl;
+		for (auto i = v.begin(); i < v.begin() + 40; ++i)
+			print("{:8}", *i);
+		cout << endl;
+
+		cout << "나머지" << endl;
+		for (auto i = v.begin() + 40; i < v.end(); ++i)
+			print("{:8}", *i);
+		cout << endl;
+		cout << endl;
+	}
+
+	save("메인.cpp");
+} 
+
+======================================
+저장한 시간: 2025-06-12 오후 4:14:19 목요일
+======================================
+
+//---------------------------------------------------------------------------
+// 2025 STL 화56목78	 6월 12일 목요일							(14주 2일)
+// 6월 19일 목요일 15주 2일 - 기말시험, E320에서...
+//---------------------------------------------------------------------------
+// 정렬관련 Algorithms을 알아본다 - 복잡도 순으로
+// 
+// aaaaaaaaaaaaaaabbbbbbbbbbcccccccccccc - O(N)
+// 
+// 1. partition			- O(N)
+// 2. nth_element
+// 3. partial_sort
+// 4. sort				- O(NlogN)
+// 5. stable_sort
+//---------------------------------------------------------------------------
+
+#include <iostream>
+#include <random>	
+#include <vector>
+#include <algorithm>
+#include <print>
+#include <numeric>
+#include "save.h"
+#include "STRING.h"
+using namespace std;
+
+extern bool 관찰;					// 관찰하려면 true로 설정
+
+default_random_engine dre{ random_device{}() };
+
+//--------
+int main()
+//--------
+{
+	vector<int> v(100);
+	iota(v.begin(), v.end(), 1);
+
+	{
+		cout << "홀수와 짝수로 분리" << endl;
+
+		shuffle(v.begin(), v.end(), dre);
+
+		cout << "partion 하기 전" << endl;
+		for (int num : v)
+			print("{:8}", num);
+		cout << endl;
+
+		cout << endl;
+		auto p = partition(v.begin(), v.end(), [](int num) {
+			return num & 1;
+		});
+
+		cout << "홀수" << endl;
+		for (auto i = v.begin(); i < p; ++i)
+			print("{:8}", *i);
+		cout << endl;
+
+		cout << "짝수" << endl;
+		for (auto i = p; i < v.end(); ++i)
+			print("{:8}", *i);
+		cout << endl;
+		cout << endl;
+	}
+
+	{
+		cout << "40번쨰까지와 나머지를 분리" << endl;
+		// 홀수 번째까지 놔두고 그 뒤에는 짝수 홀수 상관 없음
+
+		shuffle(v.begin(), v.end(), dre);
+
+		cout << "nth_element 실행 전" << endl;
+		for (int num : v)
+			print("{:8}", num);
+		cout << endl;
+
+		cout << endl;
+		nth_element(v.begin(), v.begin() + 40, v.end());
+
+		cout << "앞에서부터 40개" << endl;
+		for (auto i = v.begin(); i < v.begin() + 40; ++i)
+			print("{:8}", *i);
+		cout << endl;
+
+		cout << "나머지" << endl;
+		for (auto i = v.begin() + 40; i < v.end(); ++i)
+			print("{:8}", *i);
+		cout << endl;
+		cout << endl;
+	}
+
+	{
+		cout << "40번째까지만 정렬" << endl;
+
+		shuffle(v.begin(), v.end(), dre);
+
+		cout << "partial_sort 실행 전" << endl;
+		for (int num : v)
+			print("{:8}", num);
+		cout << endl;
+
+		cout << endl;
+		partial_sort(v.begin(), v.begin() + 40, v.end(), greater<int>{});
+
+		cout << "앞에서부터 40개만 정렬" << endl;
+		for (auto i = v.begin(); i < v.begin() + 40; ++i)
+			print("{:8}", *i);
+		cout << endl;
+
+		cout << "나머지" << endl;
+		for (auto i = v.begin() + 40; i < v.end(); ++i)
+			print("{:8}", *i);
+		cout << endl;
+		cout << endl;
+	}
+
+	save("메인.cpp");
+} 
+
+======================================
+저장한 시간: 2025-06-12 오후 4:16:01 목요일
+======================================
+
+//---------------------------------------------------------------------------
+// 2025 STL 화56목78	 6월 12일 목요일							(14주 2일)
+// 6월 19일 목요일 15주 2일 - 기말시험, E320에서...
+//---------------------------------------------------------------------------
+// 정렬관련 Algorithms을 알아본다 - 복잡도 순으로
+// 
+// aaaaaaaaaaaaaaabbbbbbbbbbcccccccccccc - O(N)
+// 
+// 1. partition			- O(N)
+// 2. nth_element
+// 3. partial_sort
+// 4. sort				- O(NlogN)
+// 5. stable_sort
+//---------------------------------------------------------------------------
+
+#include <iostream>
+#include <random>	
+#include <vector>
+#include <algorithm>
+#include <print>
+#include <numeric>
+#include "save.h"
+#include "STRING.h"
+using namespace std;
+
+extern bool 관찰;					// 관찰하려면 true로 설정
+
+default_random_engine dre{ random_device{}() };
+
+//--------
+int main()
+//--------
+{
+	vector<int> v(100);
+	iota(v.begin(), v.end(), 1);
+
+	{
+		cout << "홀수와 짝수로 분리" << endl;
+
+		shuffle(v.begin(), v.end(), dre);
+
+		cout << "partion 하기 전" << endl;
+		for (int num : v)
+			print("{:8}", num);
+		cout << endl;
+
+		cout << endl;
+		auto p = partition(v.begin(), v.end(), [](int num) {
+			return num & 1;
+		});
+
+		cout << "홀수" << endl;
+		for (auto i = v.begin(); i < p; ++i)
+			print("{:8}", *i);
+		cout << endl;
+
+		cout << "짝수" << endl;
+		for (auto i = p; i < v.end(); ++i)
+			print("{:8}", *i);
+		cout << endl;
+		cout << endl;
+	}
+
+	{
+		cout << "40번쨰까지와 나머지를 분리" << endl;
+		// 홀수 번째까지 놔두고 그 뒤에는 짝수 홀수 상관 없음
+
+		shuffle(v.begin(), v.end(), dre);
+
+		cout << "nth_element 실행 전" << endl;
+		for (int num : v)
+			print("{:8}", num);
+		cout << endl;
+
+		cout << endl;
+		nth_element(v.begin(), v.begin() + 40, v.end());
+
+		cout << "앞에서부터 40개" << endl;
+		for (auto i = v.begin(); i < v.begin() + 40; ++i)
+			print("{:8}", *i);
+		cout << endl;
+
+		cout << "나머지" << endl;
+		for (auto i = v.begin() + 40; i < v.end(); ++i)
+			print("{:8}", *i);
+		cout << endl;
+		cout << endl;
+	}
+
+	{
+		cout << "40번째까지만 정렬" << endl;
+
+		shuffle(v.begin(), v.end(), dre);
+
+		cout << "partial_sort 실행 전" << endl;
+		for (int num : v)
+			print("{:8}", num);
+		cout << endl;
+
+		cout << endl;
+		partial_sort(v.begin(), v.begin() + 40, v.end(), greater<int>{});
+
+		cout << "앞에서부터 40개만 정렬" << endl;
+		for (auto i = v.begin(); i < v.begin() + 40; ++i)
+			print("{:8}", *i);
+		cout << endl;
+
+		cout << "나머지" << endl;
+		for (auto i = v.begin() + 40; i < v.end(); ++i)
+			print("{:8}", *i);
+		cout << endl;
+		cout << endl;
+	}
+
+	{
+		cout << "전체 정렬" << endl;
+
+		shuffle(v.begin(), v.end(), dre);
+
+		cout << "sort 실행 전" << endl;
+		for (int num : v)
+			print("{:8}", num);
+		cout << endl;
+
+		cout << endl;
+		sort(v.begin(), v.end());
+
+		cout << "정렬 후" << endl;
+		for (auto i = v.begin(); i < v.end(); ++i)
+			print("{:8}", *i);
+		cout << endl;
+		cout << endl;
+	}
+
+
+	save("메인.cpp");
+} 
+
+======================================
+저장한 시간: 2025-06-12 오후 4:23:26 목요일
+======================================
+
+//---------------------------------------------------------------------------
+// 2025 STL 화56목78	 6월 12일 목요일							(14주 2일)
+// 6월 19일 목요일 15주 2일 - 기말시험, E320에서...
+//---------------------------------------------------------------------------
+// 정렬관련 Algorithms을 알아본다 - 복잡도 순으로
+// 
+// aaaaaaaaaaaaaaabbbbbbbbbbcccccccccccc - O(N)
+// 
+// 1. partition			- O(N)
+// 2. nth_element
+// 3. partial_sort
+// 4. sort				- O(NlogN)
+// 5. stable_sort
+//---------------------------------------------------------------------------
+
+#include <iostream>
+#include <random>	
+#include <vector>
+#include <algorithm>
+#include <print>
+#include <numeric>
+#include "save.h"
+#include "STRING.h"
+using namespace std;
+
+extern bool 관찰;					// 관찰하려면 true로 설정
+
+default_random_engine dre{ random_device{}() };
+uniform_int_distribution<int> uidChar{ 'A', 'Z' };
+uniform_int_distribution<int> uid{ 1, 100 };
+
+class Dog {
+	char c{ static_cast<char>(uidChar(dre)) };
+	int n{ uid(dre) };
+
+	friend ostream& operator<<(ostream& os, const Dog& dog) {
+		print(os, "{} - {:3}", dog.c, dog.n);
+		return os;
+	}
+};
+
+//--------
+int main()
+//--------
+{
+	save("메인.cpp");
+
+	vector<Dog> dogs(100);
+
+	for (const Dog& dog : dogs)
+		cout << dog << endl;
+
+} 
+
+======================================
+저장한 시간: 2025-06-12 오후 4:25:14 목요일
+======================================
+
+//---------------------------------------------------------------------------
+// 2025 STL 화56목78	 6월 12일 목요일							(14주 2일)
+// 6월 19일 목요일 15주 2일 - 기말시험, E320에서...
+//---------------------------------------------------------------------------
+// 정렬관련 Algorithms을 알아본다 - 복잡도 순으로
+// 
+// aaaaaaaaaaaaaaabbbbbbbbbbcccccccccccc - O(N)
+// 
+// 1. partition			- O(N)
+// 2. nth_element
+// 3. partial_sort
+// 4. sort				- O(NlogN)
+// 5. stable_sort
+//---------------------------------------------------------------------------
+
+#include <iostream>
+#include <random>	
+#include <vector>
+#include <algorithm>
+#include <print>
+#include <numeric>
+#include "save.h"
+#include "STRING.h"
+using namespace std;
+
+extern bool 관찰;					// 관찰하려면 true로 설정
+
+default_random_engine dre{ random_device{}() };
+uniform_int_distribution<int> uidChar{ 'A', 'Z' };
+uniform_int_distribution<int> uid{ 1, 100 };
+
+struct Dog {
+	char c{ static_cast<char>(uidChar(dre)) };
+	int n{ uid(dre) };
+
+	friend ostream& operator<<(ostream& os, const Dog& dog) {
+		print(os, "{} - {:3}", dog.c, dog.n);
+		return os;
+	}
+};
+
+//--------
+int main()
+//--------
+{
+	save("메인.cpp");
+
+	vector<Dog> dogs(100);
+
+	// C 오름차순으로 정렬
+	sort(dogs.begin(), dogs.end(), [](const Dog& a, const Dog& b) {
+		return a.c < b.c;
+	});
+
+	for (const Dog& dog : dogs)
+		cout << dog << endl;
+
+} 
+
+======================================
+저장한 시간: 2025-06-12 오후 4:28:27 목요일
+======================================
+
+//---------------------------------------------------------------------------
+// 2025 STL 화56목78	 6월 12일 목요일							(14주 2일)
+// 6월 19일 목요일 15주 2일 - 기말시험, E320에서...
+//---------------------------------------------------------------------------
+// 정렬관련 Algorithms을 알아본다 - 복잡도 순으로
+// 
+// aaaaaaaaaaaaaaabbbbbbbbbbcccccccccccc - O(N)
+// 
+// 1. partition			- O(N)
+// 2. nth_element
+// 3. partial_sort
+// 4. sort				- O(NlogN)
+// 5. stable_sort
+//---------------------------------------------------------------------------
+
+#include <iostream>
+#include <random>	
+#include <vector>
+#include <algorithm>
+#include <print>
+#include <numeric>
+#include <ranges>
+#include "save.h"
+#include "STRING.h"
+using namespace std;
+
+extern bool 관찰;					// 관찰하려면 true로 설정
+
+default_random_engine dre{ random_device{}() };
+uniform_int_distribution<int> uidChar{ 'A', 'Z' };
+uniform_int_distribution<int> uid{ 1, 100 };
+
+struct Dog {
+	char c{ static_cast<char>(uidChar(dre)) };
+	int n{ uid(dre) };
+
+	friend ostream& operator<<(ostream& os, const Dog& dog) {
+		print(os, "{} - {:3}", dog.c, dog.n);
+		return os;
+	}
+};
+
+//--------
+int main()
+//--------
+{
+	save("메인.cpp");
+
+	vector<Dog> dogs(100);
+
+	// C 오름차순으로 정렬
+	/*sort(dogs.begin(), dogs.end(), [](const Dog& a, const Dog& b) {
+		return a.c < b.c;
+	});*/
+	ranges::sort(dogs, {}, &Dog::c);
+
+	for (const Dog& dog : dogs)
+		cout << dog << endl;
+
+} 
+
+======================================
+저장한 시간: 2025-06-12 오후 4:29:04 목요일
+======================================
+
+//---------------------------------------------------------------------------
+// 2025 STL 화56목78	 6월 12일 목요일							(14주 2일)
+// 6월 19일 목요일 15주 2일 - 기말시험, E320에서...
+//---------------------------------------------------------------------------
+// 정렬관련 Algorithms을 알아본다 - 복잡도 순으로
+// 
+// aaaaaaaaaaaaaaabbbbbbbbbbcccccccccccc - O(N)
+// 
+// 1. partition			- O(N)
+// 2. nth_element
+// 3. partial_sort
+// 4. sort				- O(NlogN)
+// 5. stable_sort
+//---------------------------------------------------------------------------
+
+#include <iostream>
+#include <random>	
+#include <vector>
+#include <algorithm>
+#include <print>
+#include <numeric>
+#include <ranges>
+#include "save.h"
+#include "STRING.h"
+using namespace std;
+
+extern bool 관찰;					// 관찰하려면 true로 설정
+
+default_random_engine dre{ random_device{}() };
+uniform_int_distribution<int> uidChar{ 'A', 'Z' };
+uniform_int_distribution<int> uid{ 1, 100 };
+
+struct Dog {
+	char c{ static_cast<char>(uidChar(dre)) };
+	int n{ uid(dre) };
+
+	friend ostream& operator<<(ostream& os, const Dog& dog) {
+		print(os, "{} - {:3}", dog.c, dog.n);
+		return os;
+	}
+};
+
+//--------
+int main()
+//--------
+{
+	save("메인.cpp");
+
+	vector<Dog> dogs(100);
+
+	// C 오름차순으로 정렬
+	/*sort(dogs.begin(), dogs.end(), [](const Dog& a, const Dog& b) {
+		return a.c < b.c;
+	});*/
+	ranges::sort(dogs, {}, &Dog::c);
+
+	for (const Dog& dog : dogs)
+		cout << dog << endl;
+
+} 
+
+======================================
+저장한 시간: 2025-06-12 오후 4:29:28 목요일
+======================================
+
+//---------------------------------------------------------------------------
+// 2025 STL 화56목78	 6월 12일 목요일							(14주 2일)
+// 6월 19일 목요일 15주 2일 - 기말시험, E320에서...
+//---------------------------------------------------------------------------
+// 정렬관련 Algorithms을 알아본다 - 복잡도 순으로
+// 
+// aaaaaaaaaaaaaaabbbbbbbbbbcccccccccccc - O(N)
+// 
+// 1. partition			- O(N)
+// 2. nth_element
+// 3. partial_sort
+// 4. sort				- O(NlogN)
+// 5. stable_sort
+//---------------------------------------------------------------------------
+
+#include <iostream>
+#include <random>	
+#include <vector>
+#include <algorithm>
+#include <print>
+#include <numeric>
+#include <ranges>
+#include "save.h"
+#include "STRING.h"
+using namespace std;
+
+extern bool 관찰;					// 관찰하려면 true로 설정
+
+default_random_engine dre{ random_device{}() };
+uniform_int_distribution<int> uidChar{ 'A', 'Z' };
+uniform_int_distribution<int> uid{ 1, 100 };
+
+struct Dog {
+	char c{ static_cast<char>(uidChar(dre)) };
+	int n{ uid(dre) };
+
+	friend ostream& operator<<(ostream& os, const Dog& dog) {
+		print(os, "{} - {:3}", dog.c, dog.n);
+		return os;
+	}
+};
+
+//--------
+int main()
+//--------
+{
+	save("메인.cpp");
+
+	vector<Dog> dogs(100);
+
+	// C 오름차순으로 정렬
+	/*sort(dogs.begin(), dogs.end(), [](const Dog& a, const Dog& b) {
+		return a.c < b.c;
+	});*/
+	cout << "Dog::c 기준 오름차순으로 정렬" << endl;
+	ranges::sort(dogs, {}, &Dog::c);
+
+	for (const Dog& dog : dogs)
+		cout << dog << endl;
+
+} 
+
+======================================
+저장한 시간: 2025-06-12 오후 4:30:56 목요일
+======================================
+
+//---------------------------------------------------------------------------
+// 2025 STL 화56목78	 6월 12일 목요일							(14주 2일)
+// 6월 19일 목요일 15주 2일 - 기말시험, E320에서...
+//---------------------------------------------------------------------------
+// 정렬관련 Algorithms을 알아본다 - 복잡도 순으로
+// 
+// aaaaaaaaaaaaaaabbbbbbbbbbcccccccccccc - O(N)
+// 
+// 1. partition			- O(N)
+// 2. nth_element
+// 3. partial_sort
+// 4. sort				- O(NlogN)
+// 5. stable_sort
+//---------------------------------------------------------------------------
+
+#include <iostream>
+#include <random>	
+#include <vector>
+#include <algorithm>
+#include <print>
+#include <numeric>
+#include <ranges>
+#include "save.h"
+#include "STRING.h"
+using namespace std;
+
+extern bool 관찰;					// 관찰하려면 true로 설정
+
+default_random_engine dre{ random_device{}() };
+uniform_int_distribution<int> uidChar{ 'A', 'Z' };
+uniform_int_distribution<int> uid{ 1, 100 };
+
+struct Dog {
+	char c{ static_cast<char>(uidChar(dre)) };
+	int n{ uid(dre) };
+
+	friend ostream& operator<<(ostream& os, const Dog& dog) {
+		print(os, "{} - {:3}", dog.c, dog.n);
+		return os;
+	}
+};
+
+//--------
+int main()
+//--------
+{
+	save("메인.cpp");
+
+	vector<Dog> dogs(100);
+
+	// C 오름차순으로 정렬
+	/*sort(dogs.begin(), dogs.end(), [](const Dog& a, const Dog& b) {
+		return a.c < b.c;
+	});*/
+	cout << "Dog::c 기준 오름차순으로 정렬" << endl;
+	ranges::sort(dogs, {}, &Dog::c);
+
+	for (const Dog& dog : dogs)
+		cout << dog << endl;
+
+	cout << "Dog::n 기준 오름차순으로 정렬" << endl;
+	ranges::sort(dogs, less<int>{}, &Dog::n);
+
+	for (const Dog& dog : dogs)
+		cout << dog << endl;
+
+} 
+
+======================================
+저장한 시간: 2025-06-12 오후 4:33:01 목요일
+======================================
+
+//---------------------------------------------------------------------------
+// 2025 STL 화56목78	 6월 12일 목요일							(14주 2일)
+// 6월 19일 목요일 15주 2일 - 기말시험, E320에서...
+//---------------------------------------------------------------------------
+// 정렬관련 Algorithms을 알아본다 - 복잡도 순으로
+// 
+// aaaaaaaaaaaaaaabbbbbbbbbbcccccccccccc - O(N)
+// 
+// 1. partition			- O(N)
+// 2. nth_element
+// 3. partial_sort
+// 4. sort				- O(NlogN)
+// 5. stable_sort
+//---------------------------------------------------------------------------
+
+#include <iostream>
+#include <random>	
+#include <vector>
+#include <algorithm>
+#include <print>
+#include <numeric>
+#include <ranges>
+#include "save.h"
+#include "STRING.h"
+using namespace std;
+
+extern bool 관찰;					// 관찰하려면 true로 설정
+
+default_random_engine dre{ random_device{}() };
+uniform_int_distribution<int> uidChar{ 'A', 'Z' };
+uniform_int_distribution<int> uid{ 1, 100 };
+
+struct Dog {
+	char c{ static_cast<char>(uidChar(dre)) };
+	int n{ uid(dre) };
+
+	friend ostream& operator<<(ostream& os, const Dog& dog) {
+		print(os, "{} - {:3}", dog.c, dog.n);
+		return os;
+	}
+};
+
+//--------
+int main()
+//--------
+{
+	save("메인.cpp");
+
+	vector<Dog> dogs(100);
+
+	// C 오름차순으로 정렬
+	/*sort(dogs.begin(), dogs.end(), [](const Dog& a, const Dog& b) {
+		return a.c < b.c;
+	});*/
+	cout << "Dog::c 기준 오름차순으로 정렬" << endl;
+	ranges::sort(dogs, {}, &Dog::c);
+
+	for (const Dog& dog : dogs)
+		cout << dog << endl;
+
+	cout << "Dog::n 기준 오름차순으로 정렬" << endl;
+	ranges::stable_sort(dogs, less<int>{}, &Dog::n);
+
+	for (const Dog& dog : dogs)
+		cout << dog << endl;
+
+} 
+
+======================================
+저장한 시간: 2025-06-12 오후 4:47:50 목요일
+======================================
+
+//---------------------------------------------------------------------------
+// 2025 STL 화56목78	 6월 12일 목요일							(14주 2일)
+// 6월 19일 목요일 15주 2일 - 기말시험, E320에서...
+//---------------------------------------------------------------------------
+// 정렬관련 Algorithms을 알아본다 - 복잡도 순으로
+// 
+// aaaaaaaaaaaaaaabbbbbbbbbbcccccccccccc - O(N)
+// 
+// 1. partition			- O(N)
+// 2. nth_element
+// 3. partial_sort
+// 4. sort				- O(NlogN)
+// 5. stable_sort
+//---------------------------------------------------------------------------
+
+#include <iostream>
+#include <vector>
+#include <list>	
+#include "save.h"
+#include "STRING.h"
+using namespace std;
+
+extern bool 관찰;					// 관찰하려면 true로 설정
+
+//--------
+int main()
+//--------
+{
+	// 반복자 간의 거리를 재는 distance
+	vector<int> v{ 1,2,3,4,5 };
+	list<int> c{ 1,2,3,4,5 };
+
+	cout << "vector의 distance - " << distance(v.begin(), v.end()) << endl;
+	cout << "list의 distance -   " << distance(c.begin(), c.end()) << endl;
+
+
+
+	save("메인.cpp");
+} 
+
+======================================
+저장한 시간: 2025-06-12 오후 4:48:11 목요일
+======================================
+
+//---------------------------------------------------------------------------
+// 2025 STL 화56목78	 6월 12일 목요일							(14주 2일)
+// 6월 19일 목요일 15주 2일 - 기말시험, E320에서...
+//---------------------------------------------------------------------------
+// 정렬관련 Algorithms을 알아본다 - 복잡도 순으로
+// 
+// aaaaaaaaaaaaaaabbbbbbbbbbcccccccccccc - O(N)
+// 
+// 1. partition			- O(N)
+// 2. nth_element
+// 3. partial_sort
+// 4. sort				- O(NlogN)
+// 5. stable_sort
+//---------------------------------------------------------------------------
+
+#include <iostream>
+#include <vector>
+#include <list>	
+#include "save.h"
+#include "STRING.h"
+using namespace std;
+
+extern bool 관찰;					// 관찰하려면 true로 설정
+
+//--------
+int main()
+//--------
+{
+	// 반복자 간의 거리를 재는 distance
+	vector<int> v{ 1,2,3,4,5 };
+	list<int> c{ 1,2,3,4,5 };
+
+	cout << "vector의 distance - " << distance(v.begin(), v.end()) << endl;
+	cout << "list의 distance -   " << distance(c.begin(), c.end()) << endl;
+
+
+
+	save("메인.cpp");
+} 
+
+======================================
+저장한 시간: 2025-06-12 오후 4:48:43 목요일
+======================================
+
+//---------------------------------------------------------------------------
+// 2025 STL 화56목78	 6월 12일 목요일							(14주 2일)
+// 6월 19일 목요일 15주 2일 - 기말시험, E320에서...
+//---------------------------------------------------------------------------
+// 정렬관련 Algorithms을 알아본다 - 복잡도 순으로
+// 
+// aaaaaaaaaaaaaaabbbbbbbbbbcccccccccccc - O(N)
+// 
+// 1. partition			- O(N)
+// 2. nth_element
+// 3. partial_sort
+// 4. sort				- O(NlogN)
+// 5. stable_sort
+//---------------------------------------------------------------------------
+
+#include <iostream>
+#include <vector>
+#include <list>	
+#include "save.h"
+#include "STRING.h"
+using namespace std;
+
+extern bool 관찰;					// 관찰하려면 true로 설정
+
+//--------
+int main()
+//--------
+{
+	// 반복자 간의 거리를 재는 distance
+	vector<int> v{ 1,2,3,4,5 };
+	list<int> c{ 1,2,3,4,5 };
+
+	cout << "vector의 distance - " << distance(v.end(), v.begin()) << endl;
+	cout << "list의 distance -   " << distance(c.end(), c.begin()) << endl;
+
+
+
+	save("메인.cpp");
+} 
+
+======================================
+저장한 시간: 2025-06-12 오후 4:55:10 목요일
+======================================
+
+//---------------------------------------------------------------------------
+// 2025 STL 화56목78	 6월 12일 목요일							(14주 2일)
+// 6월 19일 목요일 15주 2일 - 기말시험, E320에서...
+//---------------------------------------------------------------------------
+// 정렬관련 Algorithms을 알아본다 - 복잡도 순으로
+// 
+// aaaaaaaaaaaaaaabbbbbbbbbbcccccccccccc - O(N)
+// 
+// 1. partition			- O(N)
+// 2. nth_element
+// 3. partial_sort
+// 4. sort				- O(NlogN)
+// 5. stable_sort
+//---------------------------------------------------------------------------
+
+#include <iostream>
+#include <vector>
+#include <list>	
+#include "save.h"
+#include "STRING.h"
+using namespace std;
+
+extern bool 관찰;					// 관찰하려면 true로 설정
+
+template <class Iter>
+iterator_traits<Iter>::difference_type my_distance(Iter b, Iter e) 
+{
+	typename iterator_traits<Iter>::difference_type d{};
+	while (b != e) {
+		++b;
+		++d;
+	}
+	return d;
+}
+
+//--------
+int main()
+//--------
+{
+	// 반복자 간의 거리를 재는 distance
+	vector<int> v{ 1,2,3,4,5 };
+	list<int> c{ 1,2,3,4,5 };
+
+	cout << "vector의 distance - " << my_distance(v.begin(), v.end()) << endl;
+	cout << "list의 distance -   " << my_distance(c.begin(), c.end()) << endl;
+
+	save("메인.cpp");
+} 
+
+======================================
+저장한 시간: 2025-06-12 오후 4:56:46 목요일
+======================================
+
+//---------------------------------------------------------------------------
+// 2025 STL 화56목78	 6월 12일 목요일							(14주 2일)
+// 6월 19일 목요일 15주 2일 - 기말시험, E320에서...
+//---------------------------------------------------------------------------
+// 정렬관련 Algorithms을 알아본다 - 복잡도 순으로
+// 
+// aaaaaaaaaaaaaaabbbbbbbbbbcccccccccccc - O(N)
+// 
+// 1. partition			- O(N)
+// 2. nth_element
+// 3. partial_sort
+// 4. sort				- O(NlogN)
+// 5. stable_sort
+//---------------------------------------------------------------------------
+
+#include <iostream>
+#include <vector>
+#include <list>	
+#include "save.h"
+#include "STRING.h"
+using namespace std;
+
+extern bool 관찰;					// 관찰하려면 true로 설정
+
+template <class Iter>
+iterator_traits<Iter>::difference_type my_distance(Iter b, Iter e) 
+{
+	typename iterator_traits<Iter>::difference_type d{};
+	while (b != e) {
+		++b;
+		++d;
+	}
+	return d;
+}
+
+//--------
+int main()
+//--------
+{
+	// 반복자 간의 거리를 재는 distance
+	vector<int> v{ 1,2,3,4,5 };
+	list<int> c{ 1,2,3,4,5 };
+
+	// cout << "vector의 distance - " << my_distance(v.end(), v.begin()) << endl;
+	cout << "list의 distance -   " << my_distance(c.end(), c.begin()) << endl;
+
+	save("메인.cpp");
+} 
+
+======================================
+저장한 시간: 2025-06-12 오후 4:58:04 목요일
+======================================
+
+//---------------------------------------------------------------------------
+// 2025 STL 화56목78	 6월 12일 목요일							(14주 2일)
+// 6월 19일 목요일 15주 2일 - 기말시험, E320에서...
+//---------------------------------------------------------------------------
+// 정렬관련 Algorithms을 알아본다 - 복잡도 순으로
+// 
+// aaaaaaaaaaaaaaabbbbbbbbbbcccccccccccc - O(N)
+// 
+// 1. partition			- O(N)
+// 2. nth_element
+// 3. partial_sort
+// 4. sort				- O(NlogN)
+// 5. stable_sort
+//---------------------------------------------------------------------------
+
+#include <iostream>
+#include <vector>
+#include <list>	
+#include "save.h"
+#include "STRING.h"
+using namespace std;
+
+extern bool 관찰;					// 관찰하려면 true로 설정
+
+template <class Iter>
+iterator_traits<Iter>::difference_type my_distance(Iter b, Iter e) 
+{
+	// 만약 Iter가 random_access_iterator_tag 라면
+	return e - b;
+	
+	typename iterator_traits<Iter>::difference_type d{};
+	while (b != e) {
+		++b;
+		++d;
+	}
+	return d;
+}
+
+//--------
+int main()
+//--------
+{
+	// 반복자 간의 거리를 재는 distance
+	vector<int> v{ 1,2,3,4,5 };
+	list<int> c{ 1,2,3,4,5 };
+
+	cout << "vector의 distance - " << my_distance(v.end(), v.begin()) << endl;
+	// cout << "list의 distance -   " << my_distance(c.end(), c.begin()) << endl;
+
+	save("메인.cpp");
+} 
+
+======================================
+저장한 시간: 2025-06-12 오후 5:02:18 목요일
+======================================
+
+//---------------------------------------------------------------------------
+// 2025 STL 화56목78	 6월 12일 목요일							(14주 2일)
+// 6월 19일 목요일 15주 2일 - 기말시험, E320에서...
+//---------------------------------------------------------------------------
+
+#include <iostream>
+#include <vector>
+#include <list>	
+#include <concepts>
+#include "save.h"
+#include "STRING.h"
+using namespace std;
+
+extern bool 관찰;					// 관찰하려면 true로 설정
+
+template <class Iter>
+iterator_traits<Iter>::difference_type my_distance(Iter b, Iter e) 
+{
+	// 만약 Iter가 random_access_iterator_tag 라면
+	// c++20의 concept을 이용하면 쉽다.
+
+	if (random_access_iterator<Iter>)	// Iter가 랜덤 access야?
+		return e - b;
+	else {
+		typename iterator_traits<Iter>::difference_type d{};
+		while (b != e) {
+			++b;
+			++d;
+		}
+		return d;
+	}
+}
+
+//--------
+int main()
+//--------
+{
+	// 반복자 간의 거리를 재는 distance
+	vector<int> v{ 1,2,3,4,5 };
+	list<int> c{ 1,2,3,4,5 };
+
+	cout << "vector의 distance - " << my_distance(v.end(), v.begin()) << endl;
+	// cout << "list의 distance -   " << my_distance(c.end(), c.begin()) << endl;
+
+	save("메인.cpp");
+} 
+
+======================================
+저장한 시간: 2025-06-12 오후 5:09:32 목요일
+======================================
+
+//---------------------------------------------------------------------------
+// 2025 STL 화56목78	 6월 12일 목요일							(14주 2일)
+// 6월 19일 목요일 15주 2일 - 기말시험, E320에서...
+//---------------------------------------------------------------------------
+
+#include <iostream>
+#include <vector>
+#include <list>	
+#include <concepts>
+#include "save.h"
+#include "STRING.h"
+using namespace std;
+
+extern bool 관찰;					// 관찰하려면 true로 설정
+
+template <class Iter>
+iterator_traits<Iter>::difference_type my_distance(Iter b, Iter e) 
+{
+	// 만약 Iter가 random_access_iterator_tag 라면
+	// c++20의 concept을 이용하면 쉽다.
+
+	//  C++17 이후에는 if-constexpt
+	if constexpr (random_access_iterator<Iter>)	// Iter가 랜덤 access야?
+		return e - b;
+	else {
+		typename iterator_traits<Iter>::difference_type d{};
+		while (b != e) {
+			++b;
+			++d;
+		}
+		return d;
+	}
+}
+
+//--------
+int main()
+//--------
+{
+	// 반복자 간의 거리를 재는 distance
+	vector<int> v{ 1,2,3,4,5 };
+	list<int> c{ 1,2,3,4,5 };
+
+	cout << "vector의 distance - " << my_distance(v.end(), v.begin()) << endl;
+	cout << "list의 distance -   " << my_distance(c.end(), c.begin()) << endl;
+
+	save("메인.cpp");
+} 

@@ -1,30 +1,47 @@
 //---------------------------------------------------------------------------
-// 2025 STL 화56목78	 6월 10일 화요일							(14주 1일)
-// 6월 19일 목요일 15주 2일 - 기말시험
+// 2025 STL 화56목78	 6월 12일 목요일							(14주 2일)
+// 6월 19일 목요일 15주 2일 - 기말시험, E320에서...
 //---------------------------------------------------------------------------
-// Algorithms - cppreference
-//-----------------------------------------------------	----------------------
 
 #include <iostream>
+#include <vector>
+#include <list>	
+#include <concepts>
 #include "save.h"
 #include "STRING.h"
 using namespace std;
 
 extern bool 관찰;					// 관찰하려면 true로 설정
 
+template <class Iter>
+iterator_traits<Iter>::difference_type my_distance(Iter b, Iter e) 
+{
+	// 만약 Iter가 random_access_iterator_tag 라면
+	// c++20의 concept을 이용하면 쉽다.
+
+	//  C++17 이후에는 if-constexpt
+	if constexpr (random_access_iterator<Iter>)	// Iter가 랜덤 access야?
+		return e - b;
+	else {
+		typename iterator_traits<Iter>::difference_type d{};
+		while (b != e) {
+			++b;
+			++d;
+		}
+		return d;
+	}
+}
+
 //--------
 int main()
 //--------
 {
-	// 다음 시간에 sorting 관련 알고리즘 이해
-	string s{ "2025. 6. 10" };
+	// 반복자 간의 거리를 재는 distance
+	vector<int> v{ 1,2,3,4,5 };
+	list<int> c{ 1,2,3,4,5 };
 
-	// 이것도 살리고.
-	while (true) {
-		cout << s << endl;
-		// 100ms 쉬고
-		rotate(s.begin(), s.end(), s.begin() + 1);
-	}
+	cout << "vector의 distance - " << my_distance(v.end(), v.begin()) << endl;
+	cout << "list의 distance -   " << my_distance(c.end(), c.begin()) << endl;
 
 	save("메인.cpp");
 } 
